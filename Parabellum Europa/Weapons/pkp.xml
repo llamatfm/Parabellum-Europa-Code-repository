@@ -1,0 +1,79 @@
+ <Item name="" description="" identifier="pkp" category="Weapon" subcategory="Renegade" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,bulkyweapon,provocativetohumanai" Scale="0.15
+ " cargocontaineridentifier="scp_weaponcrate" impactsoundtag="weaponheavydrop">
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="weaponholder" />
+    <Price baseprice="1200" displaynonempty="true" minleveldifficulty="20">
+      <Price storeidentifier="merchantoutpost" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="1">
+        <Reputation faction="separatists" min="70" />
+      </Price>
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="0" maxavailable="2">
+        <Reputation faction="separatists" min="70" />
+      </Price>
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="2">
+        <Reputation faction="separatists" min="70" />
+      </Price>
+    </Price>
+    <Deconstruct time="35">
+      <Item identifier="scp_basicparts" amount="4" />
+      <Item identifier="steel" amount="2" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="scp_basicparts" amount="6" />
+      <RequiredItem identifier="steel" amount="7" />
+      <RequiredItem identifier="plastic" amount="5" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Weapons/PKPinv.png" sourcerect="0,0,591,630" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Weapons/PKP.png" sourcerect="0,0,779,245" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="60" density="50" />
+	<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-20" aimpos="50,-10" handle1="-150,-20" handle2="130,9" holdangle="-30" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="0.1" reloadnoskill="0.175" reloadskillrequirement="50" weapondamagemodifier="0.7" barrelpos="700,40" spread="18" unskilledspread="55" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="8.0,2.0" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2.0,6.0" colormultiplier="255,200,200,200" />
+      <Sound file="%ModDir%/Sounds/pkp1.ogg" type="OnUse" range="3000" selectionmode="Random" volume="1.1" />
+      <Sound file="%ModDir%/Sounds/pkp1.ogg" type="OnUse" range="3000" volume="1.1" frequencymultiplier="0.95" />
+      <Sound file="%ModDir%/Sounds/pkp1.ogg" type="OnUse" range="3000" volume="1.1" frequencymultiplier="1.05" />
+      <StatusEffect type="OnUse" target="this" tags="fired" duration="0.15" setvalue="true" stackable="false" />
+      <!-- Recoil -->
+      <StatusEffect type="OnUse" target="this" spread="-2.25" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+        <Conditional Spread="gt 10" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="this" spread="1.5" stackable="true" disabledeltatime="true" interval="0.025" setvalue="false" comparison="and">
+        <Conditional hasstatustag="neq fired" />
+        <Conditional Spread="lt 40" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="25" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true">
+        <Conditional recoilstabilized="lte 0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems excludeditems="sgt_gaugeset" msg="ItemmsgAmmoRequired" type="Contained" tags="gpmgammo">
+        <Upgrade modversion="1.1.0" excludeditems="sgt_gaugeset" />
+      </RequiredItems>
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="-10,-87" rotation="30" containedstateindicatorslot="0" containedstateindicatorstyle="bullet">
+      <Containable items="gpmgammo">
+      </Containable>
+      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="30,1" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="6000" fadeouttime="5" />
+    <SkillRequirementHint identifier="weapons" level="70" />
+    <Quality>
+      <QualityStat stattype="FiringRateMultiplier" value="0.0334" />
+    </Quality>
+  </Item>

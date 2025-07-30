@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+    <entityname.akb-15>Renegade Special Purpose Rifle</entityname.akb-15>
+    <entitydescription.akb-15>A significantly modernized variant of the Renegade Oppressor Assault Rifle, firing 7.62x39mm, it has foregone the vast majority of its original parts in favor of a monolithic upper receiver, allowing for easy attachment of accessories including optics, and an LAM. The simplistic nature of the production of this firearm, combined with the highly potent ammunition has made this rifle a popular choice amongst Renegade infiltrator groups, who seek the reliability of the Oppressor platform while maintaining the modularity of Coalition contemporaries.</entitydescription.akb-15>
+	<entityname.ak-12t>Renegade Special Carbine</entityname.ak-12t>
+    <entitydescription.ak-12t>A significantly lightened and modernized version of the Renegade Assault rifle, this rifle is a favorite among those aiming to maintain the low cost and reliability of renegade weapons, without losing out on the higher performance offered by coalition contemporaries. This rifle forgoes the original simpler plastic furniture for a significantly more modular steel handguard, and adjustable stock, as well as a variety of attachments meant for quick target acquisition, and low light shooting.</entitydescription.ak-12t>
+	<entityname.cac>Coalition Assault Carbine</entityname.cac>
+    <entitydescription.cac>A very short carbine firing 5.56x45mm out of a 9.1" barrel, this rifle offers high amounts of firepower in a very small package. Often utilized by security officers and station security personnel, the compact size and high rate of fire make an attractive option for those who have size and armor performance in mind. This rifle in particular has been fitted with a variety of attachments in order to make it practical for bright and no-light shooting.</entitydescription.cac>
+	<entityname.scar17sopmod>Coalition Battle Rifle SOPMOD</entityname.scar17sopmod>
+    <entitydescription.scar17sopmod>An upgraded variant of the Coalitions Battle Rifle, chambered in 7.62x51, and utilizing their very own Special Operators Peculiar Modification kit, this rifle is used by low tier Coalition Special Forces groups, who prefer the rifle for its impressive firepower, and heavy stopping power. The additional attachments of an optic, foregrip and LAM create a potent option for those who need high caliber firepower and good control.</entitydescription.scar17sopmod>
+	<entityname.xm7>Coalition NGSW</entityname.xm7>
+    <entitydescription.xm7>A robust and power battle rifle, firing the large 6.8x51 cartridge, the XM7 NGSW was a bid into the now defunct NGSW program, an attempt by the Europan Coalition to create a brand new baseline service rifle, capable of handling modern body armor. Despite the exceptionally short production run, this rifle and its blueprints have found their way onto the public market, now frequently used by Security Officers, mercenaries, and PMCs who need high effectiveness against armor without sacrificing the muzzle energy of a battle rifle.</entitydescription.xm7>
+	<entityname.ngswmagazine>NGSW Magazine</entityname.ngswmagazine>
+    <entitydescription.ngswmagazine>A 20 round, detachable box magazine containing 20 of the coveted 6.8x51 round, a unique and rare munition favored for its capabilities against body armor.</entitydescription.ngswmagazine>
+	<entityname.pkp>Renegade Light Machinegun</entityname.pkp>
+	<entitydescription.pkp>A rugged, bullpupped variant of the Renegade's mainline machinegun. Chambered in a full power cartridge, and fed from standard GPMG belt boxes, the weapon combines brutal firepower with compact size. While it lacks the advanced recoil dampeners of coalition models, it's quick change, thick barrel should allow for heavy sustained bursts, assuming the operator can control it.</entitydescription.pkp>
+	<entityname.cgl>Compact Grenade Launcher</entityname.cgl>
+	<entitydescription.cgl>A simple, lightweight, and low cost grenade launcher firing standard 40x46 rounds. This weapon holds an advantage in that it is easily compact enough to fit in a holster or bag, and small enough to easily tag along with boarding teams and security personnel. Though fairly slow to reload, and limited in range, it offers unmatched room clearing capability in the right hands.</entitydescription.cgl>
+	<entityname.lamg>Coalition Light Assault Machinegun</entityname.lamg>
+	<entitiydescription.lamg>A next-generation light automatic weapon developed specifically for the Coalitions SOF teams, chambered in the famed 6.8x51 for superior armor penetration, and effectiveness at range. Lightweight, modular, and lethal, the LAMG features a quick change, free floated barrel, advanced durasteel recoil compensation, and a large amount of space for attachments.</entitiydescription.lamg>
+	<entityname.68smallbeltbag>6.8 Machinegun Belt Bag</entityname.68smallbeltbag>
+	<entitydescription.68smallbeltbag>A 50 round belt bag filled with 6.8x51 AP rounds.</entitydescription.68smallbeltbag>
+	<entityname.68largebeltbag>6.8 Large Machinegun Belt Bag</entityname.68largebeltbag>
+	<entitydescription.68largebeltbag>A 100 round belt bag filled with 6.8x51 AP rounds, does not fit the LAMG.</entitydescription.68largebeltbag>
+	<entityname.68APsmallbeltbag>6.8 Physicorium AP Belt Bag</entityname.68APsmallbeltbag>
+	<entitydescription.68APsmallbeltbag>A 50 round belt bag filled with Physicorium cored 6.8x51 rounds, featuring the highest penetration of any conventional round available on Europa, access to this ammo is strictly prohibited by the Coalition. A true tank buster.</entitydescription.68APsmallbeltbag>
+	<entityname.m250>Coalition NGSA</entityname.m250>
+	<entitiydescription.m250>The Coalitions newest next generation medium machinegun, the Next Generation Squad Automatic is a state-of-the-art weapon that delivers unmatched firepower and armor penetration for the Coalitions high tier SOF squads. It's low recoil, rapid barrel cooling, and 6.8x51 chambering make it a favorite amount Coalition special operations fireteams and rapid response units.</entitiydescription.m250>
+	<entityname.1911gi>Coalition Light Handcannon</entityname.1911gi>
+	<entitydescription.1911gi>A rugged, and slightly oversized sidearm chambered in .50 GI. Favored by Europa's civilian contractors, submariners, and outpost security personnel alike. Though heavier than equivalent sidearms, it's heavy round is known to put down crawlers, husks, and worse, provided the shooter can handle the recoil. What it lacks in armor penetration, it makes up in sheer, brutal stopping power.</entitydescription.1911gi>
+	<entityname.50gimag>Coalition Light Handcannon Magazine</entityname.50gimag>
+	<entitydescription.50gimag>An 11 round magazine containing the infamous .50 GI, an extremely heavy cartridge with enough stopping power to turn heads into confetti, and crawlers into paint.</entitydescription.50gimag>
+	<entityname.saw>Coalition Light Machinegun</entityname.saw>
+	<entitydescription.saw>The Coalition Light Machinegun is a lightweight, reliable 5.56mm LMG issued to frontline infantry, and heavy security details. Designed for reliability in Europa's most extreme conditions, and prolonged firefights, this weapon excels at suppressive fire and area denial.</entitydescription.saw>
+	<entityname.556bigbeltbag>Light Machinegun Large Belt Bag</entityname.556bigbeltbag>
+	<entitydescription.556bigbeltbag>A bulky, 200 round soft pack filled with a lengthy 5.56x45 belt.</entitydescription.556bigbeltbag>
+	<entityname.556smallbeltbag>Light Machinegun Belt Bag</entityname.556smallbeltbag>
+	<entitydescription.556smallbeltbag>A 100 round hard case belt box filled with a 5.56x45 belt.</entitydescription.556smallbeltbag>
+	<entityname.ssaw>Coalition Light Machinegun SOPMOD</entityname.ssaw>
+	<entitydescription.ssaw>The CLMG SOPMOD is an extensively upgraded version of the Coalitions mainline LMG, tailored for Coalition special forces operating in hostile, extreme, and low visibility environments. Most parts on the weapon have been retrofitted, offering a great deal of modularity, and enhanced reliability.</entitydescription.ssaw>
+	<entityname.lppc>Low Profile Plate Carrier</entityname.lppc>
+	<entitydescription.lppc>An exceptionally low profile and lightweight plate carrier, fitted with a swimmer-cut Physicorium-durasteel plate, the LPPC is meant to offer uncompromising protection without the great bulk of other alternatives.</entitydescription.lppc>
+	<entityname.rbr>Dissent Precision Rifle</entityname.rbr>
+	<entitydescription.rbr>A heavily reworked variant of the Renegade Battle Rifle, chambered in 7.62x51 and fitted with the OSNAZ-KIT, the Dissent precision rifle offers high accuracy, armor penetration, and sustained fire capability. The upper assembly has been completely replaced with a durasteel alloy, and a reinforced recoil buffer allows for comfortable shooting in all environments. Modular, powerful, and brutally effective-this is the rifle of insurgents who plan to make their shots count.</entitydescription.rbr>
+	<entityname.dutmag>Battle Rifle Depleted Uranium-Tungsten Magazine</entityname.dutmag>
+	<entitydescription.dutmag>A surplus 20 round battle rifle magazine loaded with armor-piercing 7.62x51mm cartridges. Each round features a depleted uranium-tungsten alloy penetrator, offering a devastating deal of penetration against coalition body armor, mech suits, and light submarines. Crude metallurgy and heat treatment make these rounds degrading to most weapons barrels, but for the renegades, they're a brutally effective substitute for the Coalition's high tech 6.8x51.</entitydescription.dutmag>
+	<entityname.rbc>Dissent Battle Carbine</entityname.rbc>
+	<entitydescription.rbc>Another upgrade of the Renegade Battle Rifle, this sees the lengthy barrel replaced with a significantly more compact, and integrally suppressed one, as well as a collapsible stock attached to the butt of the rifle. These modifications give renegade SOF operators a compact rifle capable of firing highly potent AP rounds. Brutal, efficient, and silent.</entitydescription.rbc>
+	<entityname.apbrmag>Battle rifle AP Magazine</entityname.apbrmag>
+	<entitydescription.apbrmag>A 20 round steel magazine filled with 7.62x51 titanium cored AP rounds, highly effective against armor without sacrificing damage against soft targets.</entitydescription.apbrmag>
+	<entityname.m72he>Coalition Lightweight HEDP Rocket Launcher</entityname.m72he>
+	<entitydescription.m72he>A lightweight, disposable 72mm rocket launcher fitted with a HEDP (High Explosive Dual Purpose) warhead, designed to counter both soft and hard targets.</entitydescription.m72he>
+	<entityname.m72ic>Coalition Lightweight Incendium Rocket Launcher</entityname.m72ic>
+	<entitydescription.m72ic>A lightweight, disposable 72mm rocket launcher fitted with an incendiary warhead, although lacking in blast and fragmentation, it is still capable of creating large fires.</entitydescription.m72ic>
+	<entityname.raro>Renegade Assault Rifle OSNAZ</entityname.raro>
+	<entitydescription.raro>A specially outfitted variant of the Renegade Assault Rifle fitted with the OSNAZ-KIT, a field modification often used by low-tier Separatist SOF. This configuration features a night vision compatible optic, suppressor to reduce report and muzzle flash, and LAM for low light engagements. Reliable in the wet filth of Europa's brutal seas, and highly effective in close quarters, this rifle is the perfect option for when you need to clear a room, and you'd rather not wake the neighbors.</entitydescription.raro>
+	<entityname.mp7>Coalition PDW</entityname.mp7>
+	<entitydescription.mp7>Compact, controllable, and heavily overengineered, the Coalition PDW offers a reliable solution to fight light armor in Europa's claustrophobic CQB environments. Firing a 4.6x30 saboted cartridge at a high rate of fire, the PDW excels at close quarters engagements.</entitydescription.mp7>
+	<entityname.mp7magazine>Coalition PDW Magazine</entityname.mp7magazine>
+	<entitydescription.mp7magazine>A 40 round magazine filled with 4.6x30mm saboted rounds meant for the Coalition PDW.</entitydescription.mp7magazine>
+	<entityname.psa46>Coalition Tactical Pistol</entityname.psa46>
+	<entitydescription.psa46>A lightweight, fast firing pistol firing the same 4.6x30mm round as the Coalition PDW, this pistol offers an effective option for personnel who need the capability to counter light armor in a tiny package.</entitydescription.psa46>
+	<entityname.46pistolmagazine>Coalition Tactical Pistol Magazine</entityname.46pistolmagazine>
+	<entitydescription.46pistolmagazine>A 30 round magazine filled with 4.6x30mm rounds, fitted for the Coalition Tactical Pistol.</entitydescription.46pistolmagazine>
+	<entityname.mp5k>Coalition Micro Submachinegun</entityname.mp5k>
+	<entitydescription.mp5k>Built for one job only, compact, blistering firepower, the Coalition Micro Submachinegun is a compact 9mm SMG favored by submarine crews and security personnel, and anyone who needs to end a fight before it begins-preferably in less than three meters.</entitydescription.mp5k>
+	<entityname.mosin>Mosin Nagant</entityname.mosin>
+	<entitydescription.mosin>The legend. The myth. The shoulder destroyer. Originally forged during the era of line warfare and bayonets, this 7.62x54r relic continues to serve in the hands of the Jovian Separatists, not out of respect, but because the renegades refuse to fucking throw anything away. It fires a truly massive round with the subtlety of a depth charge, and reloads with the haste of a tectonic drift. Noted for its absurd durability, devastating single shot power, markings dating it back to the Russo-Japanese war of 1905, and a bolt that absolutely refuses to cooperate under pressure. Inaccurate, slow, loud, and older than the submarine you serve on, but still puts holes in things the size of a cafeteria tray. Recommended for: nostalgic grandpas, lunatics, and anyone who thinks "suppressive fire" is a myth made up by weaklings.</entitydescription.mosin>
+	<entityname.mosinmagazine>Mosin Nagant Stripper Clip</entityname.mosinmagazine>
+	<entitydescription.mosinmagazine>Why are you using this.</entitydescription.mosinmagazine>
+	<entityname.mosinauto>Mosin Experimental</entityname.mosinauto>
+	<entitydescription.mosinauto>Now fully automatic, because more moving parts is exactly what this rifle needed, and chambered in .50 BMG, because 7.62x54r was "Too pedestrian". With recoil measured in tectonic units, firing it just once voids your health insurance, and the bones in your shoulder too! This ridiculous contraption punches through walls, egos, and probably reality too. Firing this weapon is not recommended in enclosed spaces. Or open spaces. Or at all, without the support of multiples spotters and a back-brace. Nobody knows who built it. Everybody agrees they should not be allowed to build anything again.</entitydescription.mosinauto>
+	<entityname.50drum>.50 cal Mosin Drum</entityname.50drum>
+	<entitydescription.50drum>God rest your soul.</entitydescription.50drum>
+	<entityname.carlg>Coalition Rocket Launcher</entityname.carlg>
+	<entitydescription.carlg>A 90mm rocket launcher utilizing a unique durasteel baffle system, meant to make firing safe even in high-oxygen, enclosed spaces. Although lacking in the warhead options offered by it's renegade equivalent, this rocket launcher still offers a decent variety of high powered rounds.</entitydescription.carlg>
+	<entityname.carlghe>Coalition HE Rocket</entityname.carlghe>
+	<entitydescription.carlghe>A 90mm High explosive rocket meant for the Coalition Rocket Launcher, creates extremely high spalling, fragmentation, and overpressure.</entitydescription.carlghe>
+	<entityname.carlgnuke>Coalition Thermonuclear Rocket</entityname.carlgnuke>
+	<entitydescription.carlgnuke>A 90mm mini-hydrogen bomb, this shell is nigh suicide to use in confined spaces, and is only safe when the operator has a considerable distance between themselves and the target. Use with care.</entitydescription.carlgnuke>
+	<entityname.carsopmod>Coalition Assault Rifle SOPMOD</entityname.carsopmod>
+	<entitydescription.carsopmod>Outfitted with the cutting-edge H.A.R.P. (Hybrid Adaptive Rifling Platform), this rifle can seamlessly swap between 5.56x45 and 5.45x39 ammunition without modification, thanks to a smart gas system, a memory-alloy bore lining, and a hybrid bolt head. Built specifically for Coalition special forces, allowing them to make usage of scavenged ammunition, this rifle ensures you are never outgunned, even when you're forced to scavenge. Coalition engineering, baby.</entitydescription.carsopmod>
+	<entityname.mlever>Multipurpose Repeater</entityname.mlever>
+	<entitydescription.mlever>A unique lever-action rifle capable of firing both the massive 18.5x33mmR round, as well as 12 gauge shotgun shells. Despite the significant recoil, this weapon remains a popular choice among civilian crews for it's sheer firepower and versatility.</entitydescription.mlever>
+	<entityname.185projectile>18.5x33mmR Round</entityname.185projectile>
+	<entitydescription.185projectile>A massive 18.5x33mmR FMJ round, with an utterly stupid 1440 jules of muzzle energy, and recoil to match.</entitydescription.185projectile>
+	<entityname.sw500>The Argument Resolver</entityname.sw500>
+	<entitydescription.sw500>A comedically oversized, overpowered revolver designed for the express purpose of annihilating soft targets, and any of the wildlife Europa can throw at you. Chambered regrettably in 18.5x33mmR and 12 gauge, and well known for turning the heads of mudrapters into paste, and breaking wrists like nothing, this is by far the most powerful handgun on Europa. Technically a pistol, practically crew served, aim carefully, you only need to shoot once.</entitydescription.sw500>
+	<entityname.pmx>Coalition Magnum Submachinegun</entityname.pmx>
+	<entitydescription.pmx>A weapon that asks the question: "Why?" - and answers it with a deafening blam. low-weight, high-powered "submachine gun" firing the ridiculous 18.5x33mmR round. Although the recoil may be nigh-unbearable, the high rate of fire and sheer muzzle energy give the weapon unparalleled firepower in such a small package.</entitydescription.pmx>
+	<entityname.pmxmagazine>Coalition Magnum SMG Magazine</entityname.pmxmagazine>
+	<entitydescription.pmxmagazine>A 20 round 18.5x33mmR magazine designed for the Coalition Magnum SMG.</entitydescription.pmxmagazine>
+</infotexts>

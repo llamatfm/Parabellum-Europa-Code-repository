@@ -1,0 +1,182 @@
+<Items>
+<!--M72 HEDP -->
+<Item name="" identifier="m72he" description="" category="Weapon" subcategory="Grenades and Explosives" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="explosivecrate" tags="mediumitem,weapon,explosive,demolitionsexpert" scale="0.14">
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" minleveldifficulty="10" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" minleveldifficulty="10" />
+    <Price baseprice="900" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="40" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="40" />
+      </Price>
+    </Price>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="35">
+      <RequiredSkill identifier="weapons" level="75" />
+      <RequiredItem identifier="c4block" amount="4" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="plastic" amount="2" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+      <Item identifier="rubber" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon name="" texture="%ModDir%/Weapons/m72he.png" sourcerect="0,552,453,447" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Weapons/m72he.png" sourcerect="0,0,766,170" depth="0.55" origin="0.5,0.5" />
+    <Body width="292" height="71" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,15" aimpos="32,15" handle1="15,-22" handle2="-7,-23" holdangle="-35" cameraaimoffset="500" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="5" reloadnoskill="7.5" reloadskillrequirement="50" barrelpos="102,9" spread="4" unskilledspread="25" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="13.0,5.0" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="impactfirearm" particleamount="8" velocitymin="300" velocitymax="900" minsize="1" maxsize="2" anglemin="-15" anglemax="15" copyentityangle="true" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="weldspark" particleamount="12" velocitymin="900" velocitymax="1500" minsize="2" maxsize="4" anglemin="-25" anglemax="25" copyentityangle="true" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="explosionsmoke" particleamount="12" velocitymin="900" velocitymax="1500" minsize="2" maxsize="4" anglemin="260" anglemax="280" copyentityangle="true" />
+      <Sound file="%ModDir%/Sounds/rpg7.ogg" type="OnUse" volume="1.5" range="3000" />
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="150.0" force="0.3" shockwave="true" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="25.0" />
+      </StatusEffect>
+      <RequiredItems excludeditems="sgt_gaugeset" items="m72ammo" type="Contained" msg="ItemMsgAmmoRequired">
+        <Upgrade modversion="1.1.0" excludeditems="sgt_gaugeset" />
+      </RequiredItems>
+      <RequiredSkill identifier="weapons" level="50" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0" setvalue="true">
+        <Conditional recoilstabilized="lte 0" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" itempos="62.3,6.85" hideitems="true" containedspritedepth="0.551" SpawnWithId="m72heround" >
+      <Containable items="m72ammo">
+          <Conditional EntityType="eq character" TargetContainer="True" />
+          <Conditional EntityType="eq null" TargetContainer="True" />
+      </Containable>
+    </ItemContainer>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+  </Item>
+ <!-- M72 HE Round -->
+  <Item name="" description="" identifier="m72heround" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="1" maxstacksizecharacterinventory="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,m72ammo" noninteractable="true" hideinmenus="true" Scale="0.2" impactsoundtag="impact_metal_light">
+   <Sprite texture="%ModDir%/Weapons/m72he.png" sourcerect="0,279,465,170" depth="0.55" origin="0.5,0.5" />
+    <PreferredContainer primary="m72he" minamount= "1" maxamount= "1" />
+    <Body width="200" height="40" density="30" />
+    <Projectile characterusable="false" launchimpulse="42.5" sticktocharacters="false">
+      <Attack structuredamage="20" penetration="0.20">
+        <Affliction identifier="explosiondamage" strength="40" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" condition="-50" disabledeltatime="true" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Explosion range="200.0" ballastfloradamage="80" structuredamage="20" levelwalldamage="15" flames="false" itemdamage="15" force="10.0" severlimbsprobability="0.65" decal="explosion" decalsize="1">
+          <Affliction identifier="bleeding" strength="40" />
+          <Affliction identifier="explosiondamage" strength="80" />
+          <Affliction identifier="stun" strength="2" />
+        </Explosion>
+        <Explosion range="950.0" ballastfloradamage="80" structuredamage="5" levelwalldamage="15" flames="false" smoke="false" itemdamage="400" force="3.0" severlimbsprobability="0.65" decal="explosion" decalsize="1">
+          <Affliction identifier="bleeding" strength="180" />
+          <Affliction identifier="lacerations" strength="140" />
+          <Affliction identifier="stun" strength="2" />
+        </Explosion>
+        <ParticleEmitter particle="weldspark" particleamount="165" scalemin="1.75" scalemax="3" velocitymin="250" velocitymax="500" distancemax="900" anglemin="0" anglemax="360" colormultiplier="255,175,50,150" copyentityangle="false" />
+        <sound file="%ModDir%/Sounds/rocketgrenadebang.ogg" range="7500" volume="1.5" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="weldspark" particleamount="30" scalemin="1" scalemax="2.5" velocitymin="6000" velocitymax="8000" anglemin="-360" anglemax="360" highqualitycollisiondetection="true" />
+        <ParticleEmitter particle="impactfirearm" particleamount="1" scalemin="10" scalemax="15" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="impactfirearm" anglemin="0" anglemax="360" particleamount="20" velocitymin="0" velocitymax="50" scalemin="1" scalemax="2" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  
+  <!--M72 Incen -->
+<Item name="" identifier="m72ic" description="" category="Weapon" subcategory="Grenades and Explosives" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="explosivecrate" tags="mediumitem,weapon,explosive,demolitionsexpert" scale="0.14">
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" minleveldifficulty="10" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" minleveldifficulty="10" />
+    <Price baseprice="900" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="40" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="40" />
+      </Price>
+    </Price>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="35">
+      <RequiredSkill identifier="weapons" level="75" />
+      <RequiredItem identifier="ic4block" amount="1" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="plastic" amount="2" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+      <Item identifier="rubber" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon name="" texture="%ModDir%/Weapons/m72ic.png" sourcerect="0,552,453,447" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Weapons/m72ic.png" sourcerect="0,0,766,170" depth="0.55" origin="0.5,0.5" />
+    <Body width="292" height="71" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,15" aimpos="32,15" handle1="15,-22" handle2="-7,-23" holdangle="-35" cameraaimoffset="500" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="5" reloadnoskill="7.5" reloadskillrequirement="50" barrelpos="102,9" spread="4" unskilledspread="25" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="13.0,5.0" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="impactfirearm" particleamount="8" velocitymin="300" velocitymax="900" minsize="1" maxsize="2" anglemin="-15" anglemax="15" copyentityangle="true" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="weldspark" particleamount="12" velocitymin="900" velocitymax="1500" minsize="2" maxsize="4" anglemin="-25" anglemax="25" copyentityangle="true" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="explosionsmoke" particleamount="12" velocitymin="900" velocitymax="1500" minsize="2" maxsize="4" anglemin="260" anglemax="280" copyentityangle="true" />
+      <Sound file="%ModDir%/Sounds/rpg7.ogg" type="OnUse" volume="1.5" range="3000" />
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="150.0" force="0.3" shockwave="true" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="25.0" />
+      </StatusEffect>
+      <RequiredItems excludeditems="sgt_gaugeset" items="m72ammo" type="Contained" msg="ItemMsgAmmoRequired">
+        <Upgrade modversion="1.1.0" excludeditems="sgt_gaugeset" />
+      </RequiredItems>
+      <RequiredSkill identifier="weapons" level="50" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0" setvalue="true">
+        <Conditional recoilstabilized="lte 0" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" itempos="62.3,6.85" hideitems="true" containedspritedepth="0.551" SpawnWithId="m72icround" >
+      <Containable items="m72ammo">
+          <Conditional EntityType="eq character" TargetContainer="True" />
+          <Conditional EntityType="eq null" TargetContainer="True" />
+      </Containable>
+    </ItemContainer>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+  </Item>
+ <!-- M72 Incen Round -->
+  <Item name="" description="" identifier="m72icround" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,m72ammo" Scale="0.2" impactsoundtag="impact_metal_light">
+    <Sprite texture="%ModDir%/Weapons/m72ic.png" sourcerect="0,279,465,170" depth="0.55" origin="0.5,0.5" />
+    <Body width="190" height="40" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="35.0" sticktocharacters="false">
+      <Attack structuredamage="20" penetration="0.15">
+        <Affliction identifier="explosiondamage" strength="30" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Explosion range="1000.0" ballastfloradamage="80" structuredamage="6" levelwalldamage="20" itemdamage="400" force="10.0" severlimbsprobability="0.65" decal="explosion" decalsize="1">
+          <Affliction identifier="bleeding" strength="250" probability="0.05" />
+          <Affliction identifier="burn" strength="100" />
+          <Affliction identifier="stun" strength="2" />
+        </Explosion>
+        <sound file="%ModDir%/Sounds/rocketgrenadebang.ogg" range="7500" volume="1.5" />
+        <Fire size="50.0" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="impactfirearm" anglemin="0" anglemax="360" particleamount="20" velocitymin="0" velocitymax="50" scalemin="1" scalemax="2" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  
+ </Items>

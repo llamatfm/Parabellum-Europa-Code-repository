@@ -1,0 +1,190 @@
+<Items>
+<!--RPG-7-->
+  <Item name="" identifier="carlg" description="" category="Weapon" subcategory="Grenades and Explosives" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="explosivecrate" tags="mediumitem,weapon,explosive,demolitionsexpert" scale="0.3">
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" minleveldifficulty="10" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" minleveldifficulty="10" />
+    <Price baseprice="2200" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="80" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="40" />
+      </Price>
+    </Price>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="45">
+      <RequiredSkill identifier="weapons" level="75" />
+      <RequiredItem identifier="scp_basicparts" amount="4" />
+      <RequiredItem identifier="steel" amount="4" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+    <InventoryIcon name="" texture="%ModDir%/Weapons/carlginv.png" sourcerect="0,0,363,375" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Weapons/carlg.png" sourcerect="0,0,475,136" depth="0.55" origin="0.5,0.5" />
+    <Body width="292" height="71" density="50" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="-10,10" aimpos="-10,7.2" handle1="110,-22" handle2="190,-23" holdangle="-35" cameraaimoffset="500" msg="ItemMsgPickUpSelect" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="" texture="%ModDir%/Weapons/carlg.png" canbehiddenbyotherwearables="false" sourcerect="0,62,292,71" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.5" origin="0.45,0.96" />
+    </Wearable>
+    <RangedWeapon reload="5" reloadnoskill="7.5" reloadskillrequirement="50" barrelpos="102,9" spread="4" unskilledspread="25" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="13.0,5.0" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="impactfirearm" particleamount="8" velocitymin="300" velocitymax="900" minsize="1" maxsize="2" anglemin="-15" anglemax="15" copyentityangle="true" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="weldspark" particleamount="12" velocitymin="900" velocitymax="1500" minsize="2" maxsize="4" anglemin="-25" anglemax="25" copyentityangle="true" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="explosionsmoke" particleamount="12" velocitymin="900" velocitymax="1500" minsize="2" maxsize="4" anglemin="260" anglemax="280" copyentityangle="true" />
+      <Sound file="%ModDir%/Sounds/rpg7.ogg" type="OnUse" volume="1.5" range="3000" />
+      <StatusEffect type="OnUse" target="this">
+        <Explosion range="150.0" force="0.3" shockwave="true" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" applyfireeffects="false" camerashake="25.0" />
+      </StatusEffect>
+      <RequiredItems excludeditems="sgt_gaugeset" items="carlgammo" type="Contained" msg="ItemMsgAmmoRequired">
+        <Upgrade modversion="1.1.0" excludeditems="sgt_gaugeset" />
+      </RequiredItems>
+      <RequiredSkill identifier="weapons" level="50" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0" setvalue="true">
+        <Conditional recoilstabilized="lte 0" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" itempos="62.3,6.85" hideitems="false" containedspritedepth="0.551" containedstateindicatorstyle="bullet">
+      <Containable items="carlgammo">
+      </Containable>
+    </ItemContainer>
+    <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
+  </Item>
+<!--Carl G HE round-->
+  <Item name="" description="" identifier="carlghe" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="4" maxstacksizecharacterinventory="2" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,carlgammo" Scale="0.2" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="carlg" minamount="1" maxamount="1" spawnprobability="0.5" />
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.035" minleveldifficulty="10" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.08" minleveldifficulty="10" />
+    <Price baseprice="700" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="6">
+        <Reputation faction="coalition" min="60" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="1" maxavailable="6">
+        <Reputation faction="coalition" min="60" />
+      </Price>
+    </Price>
+    <Fabricate suitablefabricators="ammofabricator" requiredtime="20" amount="2">
+      <RequiredSkill identifier="weapons" level="70" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="uex" amount="2" />
+      <RequiredItem identifier="flashpowder" amount="2" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="uex" />
+    </Deconstruct>
+    <InventoryIcon name="" texture="%ModDir%/Ammo/improvedammo1.png" sourcerect="0,126,137,38" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Ammo/improvedammo1.png" sourcerect="0,126,137,38" depth="0.55" origin="0.5,0.5" />
+    <Body width="200" height="40" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="42.5" sticktocharacters="false">
+      <Attack structuredamage="15" penetration="0.25">
+        <Affliction identifier="explosiondamage" strength="50" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" condition="-50" disabledeltatime="true" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot1.ogg" type="OnImpact" range="500" selectionmode="Random" />
+      <sound file="Content/Items/Weapons/FragGrenade40mmShot2.ogg" type="OnImpact" range="500" />
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Explosion range="500.0" ballastfloradamage="80" structuredamage="20" levelwalldamage="15" flames="false" itemdamage="15" force="10.0" severlimbsprobability="0.65" decal="explosion" decalsize="1">
+          <Affliction identifier="bleeding" strength="800" />
+          <Affliction identifier="explosiondamage" strength="150" />
+          <Affliction identifier="stun" strength="2" />
+        </Explosion>
+        <Explosion range="1400.0" ballastfloradamage="80" structuredamage="10" levelwalldamage="15" flames="false" smoke="false" itemdamage="400" force="3.0" severlimbsprobability="0.65" decal="explosion" decalsize="1">
+          <Affliction identifier="bleeding" strength="350" />
+          <Affliction identifier="lacerations" strength="250" />
+          <Affliction identifier="stun" strength="2" />
+        </Explosion>
+        <ParticleEmitter particle="weldspark" particleamount="165" scalemin="1.75" scalemax="3" velocitymin="250" velocitymax="500" distancemax="900" anglemin="0" anglemax="360" colormultiplier="255,175,50,150" copyentityangle="false" />
+        <sound file="%ModDir%/Sounds/rocketgrenadebang.ogg" range="7500" volume="1.5" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="weldspark" particleamount="30" scalemin="1" scalemax="2.5" velocitymin="6000" velocitymax="8000" anglemin="-360" anglemax="360" highqualitycollisiondetection="true" />
+        <ParticleEmitter particle="impactfirearm" particleamount="1" scalemin="10" scalemax="15" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="impactfirearm" anglemin="0" anglemax="360" particleamount="20" velocitymin="0" velocitymax="50" scalemin="1" scalemax="2" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!--Carl G Thermonuclear round-->
+  <Item name="" description="" identifier="carlgnuke" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="4" maxstacksizecharacterinventory="2" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,carlgammo" Scale="0.2" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="carlg" minamount="1" maxamount="1" spawnprobability="0.5" />
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.035" minleveldifficulty="10" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.08" minleveldifficulty="10" />
+    <Price baseprice="1700" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="6">
+        <Reputation faction="coalition" min="80" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="1" maxavailable="6">
+        <Reputation faction="coalition" min="80" />
+      </Price>
+    </Price>
+    <Fabricate suitablefabricators="ammofabricator" requiredtime="20" amount="2">
+      <RequiredSkill identifier="weapons" level="70" />
+      <RequiredItem identifier="uranium" amount="2" />
+	  <RequiredItem identifier="steel" />
+      <RequiredItem identifier="c4block" amount="2" />
+      <RequiredItem identifier="flashpowder" amount="2" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="uex" />
+    </Deconstruct>
+    <InventoryIcon name="" texture="%ModDir%/Ammo/improvedammo1.png" sourcerect="0,167,137,38" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Ammo/improvedammo1.png" sourcerect="0,167,137,38" depth="0.55" origin="0.5,0.5" />
+    <Body width="200" height="40" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="42.5" sticktocharacters="false">
+      <Attack structuredamage="15" penetration="0.25">
+        <Affliction identifier="explosiondamage" strength="50" />
+      </Attack>
+      <StatusEffect type="OnUse" target="This" condition="-50" disabledeltatime="true" />
+      <sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnImpact" range="2000" />
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Explosion range="900.0" ballastfloradamage="400" structuredamage="250" itemdamage="250" force="20" severlimbsprobability="0.75" decal="explosion" decalsize="0.75" penetration="0.5" camerashake="200" camerashakerange="10000" flashrange="1000" flashduration="1.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="3.0">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="burn" strength="250" />
+          <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="10" />
+          <Affliction identifier="radiationsickness" strength="30" />
+        </Explosion>
+        <Explosion range="1600" force="0.0" smoke="false" sparks="false" empstrength="1" applyfireeffects="false" ignorecover="true">
+          <Affliction identifier="emp" strength="30" multiplybymaxvitality="true" />
+        </Explosion>
+        <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="5" scalemax="6" />
+		<StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+        <ParticleEmitter particle="scp_nukepulse" particleamount="1" scalemin="4" scalemax="4" />
+      </StatusEffect>
+	  <StatusEffect type="OnImpact" target="This">
+        <sound file="%ModDir%/Sounds/nukesmall.ogg" range="3000" volume="2" />
+        <SpawnItem identifier="scp_nukegrenadefallout" spawnposition="This" />
+      </StatusEffect>
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="weldspark" particleamount="30" scalemin="1" scalemax="2.5" velocitymin="6000" velocitymax="8000" anglemin="-360" anglemax="360" highqualitycollisiondetection="true" />
+        <ParticleEmitter particle="impactfirearm" particleamount="1" scalemin="10" scalemax="15" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="impactfirearm" anglemin="0" anglemax="360" particleamount="20" velocitymin="0" velocitymax="50" scalemin="1" scalemax="2" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  </Items>

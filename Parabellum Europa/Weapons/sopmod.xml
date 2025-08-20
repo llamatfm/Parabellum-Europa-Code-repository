@@ -29,7 +29,7 @@
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/Weapons/sopmodinv.png" sourcerect="0,0,474,511" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/sopmod.png" sourcerect="0,0,649,210" depth="0.55" origin="0.5,0.5" />
-    <Body width="140" height="60" density="50" />
+    <Body width="140" height="180" density="50" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="54,-10" aimpos="60,10" handle1="-160,-45" handle2="300,20" holdangle="-20" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.1" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="240,9" spread="2.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -48,22 +48,21 @@
         <Use />
       </StatusEffect>
       <RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="762ammo" />
-      <RequiredSkill identifier="weapons" level="80" />
-      <StatusEffect type="OnUse" target="This" comparison="and">
-        <Conditional condition="lt 35" />
-        <ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255" />
-        <ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225" />
-      </StatusEffect>
-        <RequiredItem items="scp_scarextmag" type="Contained" />
-      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" />
-    </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
-      <Containable items="762ammo" hide="false" itempos="-6,-10" />
-      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
-      <SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
-        <Containable items="flashlight" hide="false" itempos="25,1" setactive="true" />
-      </SubContainer>
-    </ItemContainer>
+			<RequiredSkill identifier="weapons" level="80"/>
+			<StatusEffect type="OnUse" target="This" comparison="and">
+				<Conditional condition="lt 35"/>
+				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
+				<ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
+			</StatusEffect>
+			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true"/>
+		</RangedWeapon>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+			<Containable items="762ammo" hide="false" itempos="-8,-10"/>
+			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5"/>
+			<SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
+				<Containable items="flashlight" hide="false" itempos="25,1" setactive="true"/>
+			</SubContainer>
+		</ItemContainer>
     <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
     <Quality>
       <QualityStat stattype="FirepowerMultiplier" value="0.07" />
@@ -124,8 +123,8 @@
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.7" />
       <Attack structuredamage="1.0" targetforce="4" itemdamage="8" severlimbsprobability="0.35" penetration="0.25">
-        <Affliction identifier="bleeding" strength="25" />
-        <Affliction identifier="bleeding" strength="10" probability="0.25" />
+        <Affliction identifier="bleeding" strength="22" />
+        <Affliction identifier="bleeding" strength="15" probability="0.25" />
         <Affliction identifier="gunshotwound" strength="22" />
         <Affliction identifier="gunshotwound" strength="15" probability="0.2" />
         <Affliction identifier="stun" strength="0.15" probability="0.15" />

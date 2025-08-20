@@ -70,6 +70,28 @@
   </Item>
 	<!--18.5x33Rmm round-->
 	<Item name="" identifier="185projectile" tags="smallitem,185ammo,185bullet" Scale="0.3" category="Weapon" impactsoundtag="impact_metal_light" hideinmenus="false" maxstacksize="36" maxstacksizecharacterinventory="18" scale="0.1">
+		<Price baseprice="35" displaynonempty="true">
+		<Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="2" multiplier="1.5" />
+		<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="2">
+        <Reputation faction="coalition" min="15" />
+		</Price>
+		<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+		<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" maxavailable="4">
+			<Reputation faction="coalition" min="15" />
+      </Price>
+		<Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+		<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" maxavailable="4">
+        <Reputation faction="coalition" min="15" />
+		</Price>
+    </Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="10" amount="8">
+			<RequiredSkill identifier="weapons" level="30"/>
+			<RequiredItem identifier="flashpowder" amount="1" />
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="1"/>
+		</Fabricate>
+		<Deconstruct time="0.5">
+			<Item identifier="steel"/>
+		</Deconstruct>
 		<InventoryIcon texture="%ModDir%/Ammo/improvedammo1.png" sourcerect="492,0,37,37" origin="0.5,0.5"/>
 		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" sourcerect="492,0,37,37" origin="0.5,0.5"/>
 		<Body width="40" height="15" density="40"/>

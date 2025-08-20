@@ -4,7 +4,7 @@
     <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15" />
     <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
     <PreferredContainer secondary="weaponholder" />
-    <Price baseprice="1200" displaynonempty="true" minleveldifficulty="20">
+    <Price baseprice="2800" displaynonempty="true" minleveldifficulty="20">
       <Price storeidentifier="merchantoutpost" sold="false" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="1">
         <Reputation faction="separatists" min="70" />
@@ -30,7 +30,7 @@
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Weapons/PKPinv.png" sourcerect="0,0,591,630" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/PKP.png" sourcerect="0,0,779,245" depth="0.55" origin="0.5,0.5" />
-    <Body width="140" height="60" density="50" />
+    <Body width="140" height="200" density="50" />
 	<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-20" aimpos="50,-10" handle1="-150,-20" handle2="130,9" holdangle="-30" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.1" reloadnoskill="0.175" reloadskillrequirement="50" weapondamagemodifier="0.7" barrelpos="700,40" spread="18" unskilledspread="55" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -55,6 +55,14 @@
       <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true">
         <Conditional recoilstabilized="lte 0" />
       </StatusEffect>
+	  <StatusEffect type="OnUse" target="This" Condition="-100"/>
+		<StatusEffect type="Always" target="This" Condition="8">
+		<Conditional condition="gt 0"/>
+		</StatusEffect>
+		<StatusEffect type="OnBroken" target="This" delay="0.5">
+		<sound file="%ModDir%/Sounds/machinegunjam.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+		</StatusEffect>
+		<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="10" stackable="false"/>
       <StatusEffect type="OnUse" target="Contained">
         <Use />
       </StatusEffect>

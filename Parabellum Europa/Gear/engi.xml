@@ -1,0 +1,64 @@
+<Item name="" identifier="engi" description="" category="Equipment" subcategory="Renegade" cargocontaineridentifier="metalcrate" tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="armcab" />
+    <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.03" />
+    <PreferredContainer primary="abandonedarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+    <Price baseprice="1000" displaynonempty="true" minleveldifficulty="5">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" minavailable="0" maxavailable="1">
+        <Reputation faction="separatists" min="35" />
+      </Price>
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="1">
+        <Reputation faction="separatists" min="35" />
+      </Price>
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="1" maxavailable="3">
+        <Reputation faction="separatists" min="35" />
+      </Price>
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="3">
+        <Reputation faction="separatists" min="35" />
+      </Price>
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="ballisticfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="40">
+      <RequiredSkill identifier="weapons" level="30" />
+      <Item identifier="scp_heavyrenuniform" />
+      <Item identifier="ballisticfiber" amount="2" />
+      <Item identifier="steel" />
+	  <Item identifier="rubber" amount="2" />
+	  <Item identifier="lead" amount="3" />
+    </Fabricate>
+    <ItemContainer capacity="6" depth="0.5">
+      <Containable items="smallitem,ammo" excludeditems="clothing,toolbox,mobilecontainer,rucksack,backpack,waistbelt,vest,backpack1,medicalbackpack,power-backpack,duffelbag,heavybackpack,oxy-gen. backpack,xeno-backpack,techno-backpack" />
+    </ItemContainer>
+    <InventoryIcon name="heavyrenuniforminv" texture="%ModDir%/Gear/engi.png" sourcerect="619,0,66,52" origin="0.5,0.5" />
+    <Sprite name="heavyrenuniformground" texture="%ModDir%/Gear/engi.png" sourcerect="570,52,132,74" depth="0.6" origin="0.5,0.5" />
+    <Body width="180" height="50" density="30" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Heavy Renegade Uniform Torso" texture="engi.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Right Hand" texture="engi.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Left Hand" texture="engi.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Right Lower Arm" texture="engi.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Left Lower Arm" texture="engi.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Right Upper Arm" texture="engi.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Left Upper Arm" texture="engi.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Waist" texture="engi.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Right Thigh" texture="engi.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Left Thigh" texture="engi.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Right Leg" texture="engi.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Left Leg" texture="engi.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Left Shoe" texture="engi.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <sprite name="Heavy Renegade Uniform Right Shoe" texture="engi.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" sourcerect="0,0,683,264" origin="0.5,0.5" />
+      <damagemodifier afflictionidentifiers="burn" armorsector="0.0,360.0" damagemultiplier="0.3" />
+      <damagemodifier afflictionidentifiers="gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.85" damagesound="LimbArmor" deflectprojectiles="true" />
+      <damagemodifier afflictionidentifiers="lacerations,bleeding" armorsector="0.0,360.0" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+	  <damagemodifier afflictionidentifiers="explosiondamage" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+	  <damagemodifier afflictionidentifiers="radiationsickness" armorsector="0.0,360.0" damagemultiplier="0" />
+      <SkillModifier skillidentifier="weapons" skillvalue="-5" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="-5" />
+      <SkillModifier skillidentifier="electrical" skillvalue="-5" />
+      <StatValue stattype="WalkingSpeed" value="-0.075" />
+      <StatValue stattype="SwimmingSpeed" value="-0.1" />
+    </Wearable>
+  </Item>

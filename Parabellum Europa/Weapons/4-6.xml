@@ -28,21 +28,16 @@
 		</Deconstruct>
 		<InventoryIcon texture="%ModDir%/Weapons/4-6inv.png" sourcerect="0,0,300,442" origin="0.5,0.5"/>
 		<Sprite texture="%ModDir%/Weapons/4-6.png" sourcerect="0,0,400,254" depth="0.55" origin="0.5,0.5"/>
-		<Body width="140" height="60" density="50"/>
-		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="600,-50" aimpos="100,3" handle1="-150,-20" holdangle="-90" msg="ItemMsgPickUpSelect"/>
+		<Body width="250" height="200" density="50"/>
+		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="70,0" aimpos="100,3" handle1="-150,-20" holdangle="-90" msg="ItemMsgPickUpSelect"/>
 		<RangedWeapon reload="0.32" reloadnoskill="0.4" reloadskillrequirement="80" barrelpos="360,9" spread="0.6" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
 			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
 			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
 			<Sound file="%ModDir%/Sounds/p226.ogg" type="OnUse" range="3000" selectionmode="Random"/>
 			<Sound file="%ModDir%/Sounds/p226.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
 			<Sound file="%ModDir%/Sounds/p226.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
-			<StatusEffect type="OnUse" target="This" Condition="-100"/>
-			<StatusEffect type="Always" target="This" Condition="4">
-				<Conditional condition="gt 0"/>
-			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="false" delay="0" stackable="false"/>
 			<StatusEffect type="OnUse">
-				<Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
+				<Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="16"/>
 			</StatusEffect>
 			<StatusEffect type="OnUse" target="Contained">
 				<Use/>
@@ -50,7 +45,7 @@
 			<RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="46ammo" />
 			<RequiredSkill identifier="weapons" level="80"/>
 			<StatusEffect type="OnUse" target="This" comparison="and">
-				<Conditional condition="lt 35"/>
+
 				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
 				<ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
 			</StatusEffect>
@@ -60,7 +55,7 @@
 			<Containable items="46ammo" hide="false" itempos="-11,-3"/>
 			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5"/>
 			<SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
-				<Containable items="flashlight" hide="false" itempos="25,1" setactive="true"/>
+				<Containable items="flashlight" hide="false" itempos="5,1" setactive="true"/>
 			</SubContainer>
 		</ItemContainer>
 		<aitarget sightrange="2000" soundrange="4000" fadeouttime="5"/>
@@ -75,7 +70,7 @@
 		<PreferredContainer primary="mp7" minamount="0" maxamount="1" spawnprobability="0.5"/>
 		<PreferredContainer primary="secarmcab"/>
 		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
-		<Price baseprice="500" displaynonempty="true" minleveldifficulty="10">
+		<Price baseprice="200" displaynonempty="true" minleveldifficulty="10">
 			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
 			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
 			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>

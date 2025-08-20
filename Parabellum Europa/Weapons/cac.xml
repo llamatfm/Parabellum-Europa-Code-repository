@@ -31,7 +31,7 @@
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/Weapons/cacinv.png" sourcerect="0,0,619,670" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/cac.png" sourcerect="0,0,857,318" depth="0.55" origin="0.5,0.5" />
-    <Body width="244" height="69" density="50" />
+    <Body width="244" height="230" density="50" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="45,7" handle1="-125,-75" handle2="130,9" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.07" reloadnoskill="0.11" reloadskillrequirement="50" barrelpos="300,27" spread="3" unskilledspread="18" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2" weapondamagemodifier="0.9">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />

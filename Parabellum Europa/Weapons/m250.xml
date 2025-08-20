@@ -30,7 +30,7 @@
 		</Deconstruct>
 		<InventoryIcon texture="%ModDir%/Weapons/m250inv.png" sourcerect="0,0,588,599" origin="0.5,0.5"/>
 		<Sprite texture="%ModDir%/Weapons/m250.png" sourcerect="0,0,787,351" depth="0.55" origin="0.5,0.5"/>
-		<Body width="140" height="60" density="50"/>
+		<Body width="140" height="60" density="250"/>
 		<Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="44,-20" aimpos="57,3" handle1="-190,-60" handle2="300,10" holdangle="20" msg="ItemMsgPickUpSelect"/>
 		<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
 			<sprite name="m250" texture="%ModDir%/Weapons/m250.png" canbehiddenbyotherwearables="false" sourcerect="0,0,787,351" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.15" origin="0.5,0.95" />
@@ -45,10 +45,13 @@
 			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
 			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
 			<StatusEffect type="OnUse" target="This" Condition="-100"/>
-			<StatusEffect type="Always" target="This" Condition="4">
+			<StatusEffect type="Always" target="This" Condition="8">
 				<Conditional condition="gt 0"/>
 			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="false" delay="0" stackable="false"/>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjamfast.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="4.5" stackable="false"/>
 			<StatusEffect type="OnUse">
 				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
 			</StatusEffect>

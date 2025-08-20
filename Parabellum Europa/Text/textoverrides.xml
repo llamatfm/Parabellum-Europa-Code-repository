@@ -90,4 +90,42 @@
 	<entitydescription.pmx>A weapon that asks the question: "Why?" - and answers it with a deafening blam. low-weight, high-powered "submachine gun" firing the ridiculous 18.5x33mmR round. Although the recoil may be nigh-unbearable, the high rate of fire and sheer muzzle energy give the weapon unparalleled firepower in such a small package.</entitydescription.pmx>
 	<entityname.pmxmagazine>Coalition Magnum SMG Magazine</entityname.pmxmagazine>
 	<entitydescription.pmxmagazine>A 20 round 18.5x33mmR magazine designed for the Coalition Magnum SMG.</entitydescription.pmxmagazine>
+	<entityname.hurdygurdy>Hurdy Gurdy</entityname.hurdygurdy>
+	<entitydescription.hurdygurdy>There is a time for flee, and there is a time for fight. A wise leader knows when to make the right choice. But the strike cruisers are already here, Tarkhan, so your right of choice has been revoked.</entitydescription.hurdygurdy>
+	<entityname.aug>Coalition Bullpup Assault Rifle</entityname.aug>
+	<entitiydescription.aug>A lightweight, standard-issue compact assault rifle favored by boarding parties and underwater infantry. Designed for extreme close quarters combat, it's NV capable optic and rearward balance make it ideal for tight spaces and low visibility shooting.</entitiydescription.aug>
+	<entityname.malyuk>Renegade Bullpup Assault Rifle</entityname.malyuk>
+	<entitydescription.malyuk>A reworked assault rifle platform pressed into bullpup configuration by separatist gunsmiths. Crude in design, but highly practical, this rugged weapon offers a high level of firepower in a compact package. Loud, ugly, and built to kill.</entitydescription.malyuk>
+	<entityname.badger>Coalition Oppressor Assault Rifle SOPMOD</entityname.badger>
+	<entitydescription.badger>Outfitted with an extended barrel, large integrated suppressor, and a reworked upper reciever. Whisper-quiet and precision built, this rifle is one of the favorite tools of SF teams operating under the Coalition's Main Directorate of Intelligence. </entitydescription.badger>
+	<entityname.300mag>Coalition Oppressor Assault Rifle Magazine</entityname.300mag>
+	<entitydescription.300mag>Standard subsonic .300 BLK FMJ rounds loaded into a 30-round polymer magazine. Offers clean ballistics and effective penetration at close ranges.</entitydescription.300mag>
+	<entityname.300apmag>Coalition Oppressor Assault Rifle AP Magazine</entityname.300apmag>
+	<entitydescription.300apmag>Armor-piercing subsonic .300 BLK rounds loaded into a 30-round polymer magazine. Tuned for silent engagements against hostiles with heavy armor or reinforced dive suits.</entitydescription.300apmag>
+	<entityname.b2>Coalition Oppressor Assault Rifle</entityname.b2>
+	<entitydescription.b2>A carbine length weapon chambered in the subsonic .300 blackout. Although not leveraging the relative silence of the round due to a lack of suppressor, this rifle still offers a highly reliable platform to fire large caliber, high energy rounds in a compact package. Ideal for station security and submarine crews.</entitydescription.b2>
+	<entityname.qbz>Renegade Bullpup Rifle Type 77</entityname.qbz>
+	<entitydescription.qbz>A bullpup rifle designed by the Separatists to replace their mainline assault rifle. Although it failed at this goal, the high armor penetration and damage provided by it's 5.8mm round makes it an attractive option for those who can afford it.</entitydescription.qbz>
+	<entityname.qbzmag>Renegade Type 77 Magazine</entityname.qbzmag>
+	<entitydescription.qbzmag>A polymer 30-round magazine filled with 5.8x42mm AP rounds.</entitydescription.qbzmag>
+	<entityname.engi>Renegade Combat Engineer Uniform</entityname.engi>
+	<entitydescription.engi>A modified Renegade Frag suit refit for combat engineers. Although it sacrifices some ballistic proitection, it offers enhanced safety from fires, explosives, shrapnel, radiation, and offers additional storage space.</entitydescription.engi>
+	<entityname.rgsc>Railgun Shell Demolition Charge</entityname.rgsc>
+	<entitydescription.rgsc>A standard railgun shell, hollowed out, packed with explosives, and haphazardly fitted with a fragmentation grenade fuse. Use with care.</entitydescription.rgsc>
+	<entityname.implodeinator>The Implodinator</entityname.implodeinator>
+	<entitydescription.implodeinator>The Implodinator is a crude, heavily modified revolver rumored to have been born out of a drunken bet among Jovian Renegade engineers. Instead of conventional ammunition, it somehow delivers an immediate, catastrophic pressure shock to the target’s body, causing them to implode as if they’d been dropped to the bottom of Europa’s deepest trench. Firing this weapons is a war crime in 2 states, and a religious rite of passage in another. Only the honkmother knows how it works.</entitydescription.implodeinator>
+	<entityname.impprojectile>Implodinator Round</entityname.impprojectile>
+	<entitydescription.impprojectile>Custom-built round that causes catastrophic internal pressure on impact. Illegal everywhere.</entitydescription.impprojectile>
+	<entityname.corbine>Durasteel Corbine Hammer</entityname.corbine>
+	<entitydescription.corbine>A medium-length warhammer designed for breaching hatches, disabling equipment, and caving in steel. Although not the most maneuverable, the significant leverage offered allows a large amount of energy to be struck into a target. Works as a tool for smashing in mudraptor skulls, and as a makeshift halligan bar in a pinch.</entitydescription.corbine>
+	<entityname.g11>Coalition Caseless Assault Rifle</entityname.g11>
+	<entitydescription.g11>A next-generation assault rifle firing a unique 4.73x25mm caseless round. By utilizing a fully sealed ammunition block, and operating system the rifle eliminates traditional brass ejection, reducing fouling and keeping almost all external matter out. It's hyper fast cyclic rate combined with a 5 round burst offers high volumes of firepower without sacrificng accuracy too much. Despite the significant advantages offered by this rifle, the rarity of it's ammunition cannot be understated.</entitydescription.g11>
+	<entityname.g11mag>Caseless Assault Rifle Magazine</entityname.g11mag>
+	<entitydescription.g11mag>A 50 round polymer double stack magazine filled with the unqiue 4.73x25mm caseless round.</entitydescription.g11mag>
+	<entityname.zip9>Coalition Micro Pistol</entityname.zip9>
+	<entitydescription.zip9>A cheaply made plastic piece of shit sold as a pistol, better used as a brick. Useful for little more than plinking and alleyway robberies, but still a gun nontheless.</entitydescription.zip9>
+	<entityname.zip9mag>Coalition Micro Pistol Magazine</entityname.zip9mag>
+	<entitydescription.zip9mag>An 8 round disposible magazine fitted for the Coalition Micro Pistol. Prone to feed failures.</entitydescription.zip9mag>
+	<entityname.europa>Europa</entityname.europa>
+	<entitydescription.europa>Parabellum</entitydescription.europa>
 </infotexts>

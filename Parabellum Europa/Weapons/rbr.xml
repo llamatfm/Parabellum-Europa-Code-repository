@@ -3,7 +3,7 @@
     <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
     <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15" />
     <PreferredContainer secondary="weaponholder" />
-    <Price baseprice="600" displaynonempty="true" minleveldifficulty="20">
+    <Price baseprice="1200" displaynonempty="true" minleveldifficulty="20">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
       <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
       <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
@@ -29,7 +29,7 @@
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/Weapons/rbrinv.png" sourcerect="0,0,512,541" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/rbr.png" sourcerect="0,0,700,206" depth="0.55" origin="0.5,0.5" />
-    <Body width="140" height="60" density="50" />
+    <Body width="140" height="180" density="50" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="65,-10" aimpos="60,5" handle1="-150,-60" handle2="300,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.12" reloadnoskill="0.25" reloadskillrequirement="50" barrelpos="308,12" spread="9" unskilledspread="30" weapondamagemodifier="1.2" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />

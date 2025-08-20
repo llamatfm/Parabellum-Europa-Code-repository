@@ -155,7 +155,7 @@
     <aitarget sightrange="500" soundrange="500" fadeouttime="3" />
   </Item>
  <!-- M72 Incen Round -->
-  <Item name="" description="" identifier="m72icround" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,m72ammo" Scale="0.2" impactsoundtag="impact_metal_light">
+  <Item name="" description="" identifier="m72icround" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" hideinmenus="true" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,m72ammo" Scale="0.2" impactsoundtag="impact_metal_light">
     <Sprite texture="%ModDir%/Weapons/m72ic.png" sourcerect="0,279,465,170" depth="0.55" origin="0.5,0.5" />
     <Body width="190" height="40" density="30" />
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />

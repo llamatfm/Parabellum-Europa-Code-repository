@@ -1,0 +1,76 @@
+<Item name="" description="" identifier="rgsc" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,handgrenade,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" minleveldifficulty="10" />
+    <PreferredContainer secondary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.1" minleveldifficulty="10" />
+    <Price baseprice="1100" minleveldifficulty="10">
+      <Price storeidentifier="merchantoutpost" multiplier="1.35" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="0" maxavailable="3" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="0" maxavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="c4block" copycondition="true" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="20" >
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredItem identifier="c4block" amount="2" />
+      <RequiredItem identifier="railgunshell" />
+	  <RequiredItem identifier="iron" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Explosives/rgsc.png" sourcerect="0,0,30,200" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Explosives/rgsc.png" sourcerect="0,0,30,200" depth="0.55" origin="0.5,0.5" maxcondition="99.9" />
+    <Body radius="25" height="22" density="30" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="%ModDir%/Sounds/bang1.ogg" type="OnUse" volume="1.75" range="8000" frequencymultiplier="0.95" selectionmode="All" />
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" type="OnUse" range="8000" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="90" velocitymin="500" velocitymax="1000" scalemin="1.0" scalemax="1.5" />
+        <Explosion range="860.0" structuredamage="5" ballastfloradamage="240" itemdamage="50" force="20" severlimbsprobability="0.5" decal="explosion" decalsize="1">
+          <Affliction identifier="bleeding" strength="200" />
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="stun" strength="4" />
+        </Explosion>
+        <Explosion range="1900.0" structuredamage="0" ballastfloradamage="100" itemdamage="30" force="5" interactthroughwalls="false">
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="lacerations" strength="80" />
+          <Affliction identifier="lacerations" strength="60" probability="0.25" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+    <Throwable slots="Any,RightHand+LeftHand" holdpos="0,0" handle1="0,-20" handle2="0,20" aimpos="35,-18" throwforce="1.3" reload="1.25" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true" checkconditionalalways="true">
+        <sound file="%ModDir%/Sounds/grenadethrow.ogg" range="1000" frequencymultiplier="0.9" />
+      </StatusEffect>
+      <!-- Skip the removal of safeties and explode immediatly if inside of a detonator, railgun shell or a depth charge-->
+      <StatusEffect type="OnUse" targettype="This" Condition="0" setvalue="true" comparison="OR">
+        <Conditional HasTag="detonator" targetcontainer="true" />
+        <Conditional HasTag="railgunammo" targetcontainer="true" />
+        <Conditional HasTag="depthchargeammo" targetcontainer="true" />
+      </StatusEffect>
+      <!-- forcefully pull the pin if player hasnt done so -->
+      <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true" checkconditionalalways="true">
+        <Conditional IsActive="false" targetitemcomponent="ItemComponent" />
+        <Use />
+      </StatusEffect>
+    </Throwable>
+    <!-- Activating the ItemComponent starts the timer -->
+    <ItemComponent IsActive="false" CharacterUsable="true">
+      <!--reduce condition by 1 to mark the user as the one responsible for the item breaking and exploding -->
+      <StatusEffect type="OnUse" targettype="This" IsActive="true" DontCleanUp="true" IsDangerous="true" comparison="AND" condition="-1">
+        <Conditional HasTag="neq detonator" targetcontainer="true" />
+        <Conditional HasTag="neq railgunammo" targetcontainer="true" />
+        <Conditional HasTag="neq depthchargeammo" targetcontainer="true" />
+        <Conditional IsActive="false" targetitemcomponent="ItemComponent" />
+        <ParticleEmitter particle="grenadepin" emitinterval="10" particleamount="1" anglemin="70" anglemax="100" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
+        <ParticleEmitter particle="grenadelever" emitinterval="10" particleamount="1" anglemin="120" anglemax="210" velocitymin="100" velocitymax="200" copyentityangle="true" scalemin="0.5" scalemax="0.5" />
+        <Sound file="Content/Items/Weapons/pinpull.ogg" type="OnUse" range="720" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" targettype="This" Condition="-24">
+        <ParticleEmitter particle="flamethrowersmoke" particlespersecond="25" anglemin="0" anglemax="0" velocitymin="75" velocitymax="125" copyentityangle="true" scalemin="0.1" scalemax="0.15" colormultiplier="255,255,255,150" />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>

@@ -29,19 +29,23 @@
 		</Deconstruct>
 		<InventoryIcon texture="%ModDir%/Weapons/lamginv.png" sourcerect="0,0,567,598" origin="0.5,0.5"/>
 		<Sprite texture="%ModDir%/Weapons/lamg.png" sourcerect="0,0,766,239" depth="0.55" origin="0.5,0.5"/>
-		<Body width="140" height="60" density="50"/>
+		<Body width="140" height="160" density="50"/>
 		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="44,-10" aimpos="57,3" handle1="-140,-45" handle2="300,10" holdangle="-20" msg="ItemMsgPickUpSelect"/>
 		<RangedWeapon reload="0.1" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="360,15" spread="1.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
 			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
 			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1" colormultiplier="255,200,200,200"/>
 			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" selectionmode="Random"/>
 			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
 			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
 			<StatusEffect type="OnUse" target="This" Condition="-100"/>
-			<StatusEffect type="Always" target="This" Condition="4">
+			<StatusEffect type="Always" target="This" Condition="8">
 				<Conditional condition="gt 0"/>
 			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="false" delay="0" stackable="false"/>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjamfast.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="4.5" stackable="false"/>
 			<StatusEffect type="OnUse">
 				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
 			</StatusEffect>

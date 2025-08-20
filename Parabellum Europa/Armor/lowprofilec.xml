@@ -27,7 +27,7 @@
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Armor/LPPC.png" sourcerect="0,0,277,355" depth="0.6" origin="0.5,0.5" />
     <Sprite name="Low Profile Plate Carrier" texture="%ModDir%/Armor/LPPC.png" sourcerect="0,0,277,355" depth="0.6" />
-    <Body radius="45" height="25" density="40" />
+    <Body radius="90" height="70" density="40" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="30,-30" handle1="-10,30" holdangle="-5" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" />
     <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
       <damagemodifier afflictionidentifiers="bleeding" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="armourmedimpact" deflectprojectiles="true" />
@@ -35,7 +35,7 @@
       <damagemodifier afflictionidentifiers="blunttrauma" armorsector="0.0,360.0" damagemultiplier="0.4" damagesound="armourmedimpact" deflectprojectiles="true" />
 	  <damagemodifier afflictionidentifiers="burn" armorsector="0.0,360.0" damagemultiplier="0.85" />
       <damagemodifier afflictionidentifiers="bitewounds" armorsector="0.0,360.0" damagemultiplier="0.5" damagesound="armourheavyimpact" deflectprojectiles="true" />
-      <sprite name="Low Profile Plate Carrier" texture="%ModDir%/Armor/LPPC.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.3" inheritorigin="false" origin="0.5,0.565" inheritsourcerect="false" sourcerect="0,0,277,355" />
+      <sprite name="Low Profile Plate Carrier" texture="%ModDir%/Armor/LPPC.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.3" inheritorigin="false" origin="0.6,0.565" inheritsourcerect="false" sourcerect="0,0,277,355" />
       <StatValue stattype="WalkingSpeed" value="-0.05" />
       <SkillModifier skillidentifier="mechanical" skillvalue="-5" />
       <SkillModifier skillidentifier="electrical" skillvalue="-5" />

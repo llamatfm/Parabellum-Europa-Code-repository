@@ -33,7 +33,7 @@
     </Fabricate>
     <InventoryIcon texture="%ModDir%/Weapons/sprinv.png" sourcerect="0,0,598,516" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/spr.png" sourcerect="0,0,729,240" depth="0.55" origin="0.5,0.5" />
-    <Body width="140" height="60" density="50" />
+    <Body width="140" height="160" density="50" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-9" aimpos="50,3" handle1="-131,-45" handle2="200,12" holdangle="-35" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.08" reloadnoskill="0.15" reloadskillrequirement="60" barrelpos="327,22" spread="5" unskilledspread="30" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -42,14 +42,9 @@
       <Sound file="%ModDir%/Sounds/ak7621.ogg" type="OnUse" range="3000" selectionmode="Random" />
       <Sound file="%ModDir%/Sounds/ak7621.ogg" type="OnUse" range="3000" frequencymultiplier="0.96" />
       <Sound file="%ModDir%/Sounds/ak7621.ogg" type="OnUse" range="3000" frequencymultiplier="1.02" />
-      <StatusEffect type="OnUse" target="This" Condition="-100" />
-      <StatusEffect type="Always" target="This" Condition="5">
+      <StatusEffect type="Always" target="This" Condition="0">
         <Conditional condition="gt 0" />
       </StatusEffect>
-      <StatusEffect type="OnBroken" target="This">
-        <sound file="%ModDir%/Sounds/akjam.ogg" type="OnUse" range="900.0" loop="false" volume="1.2" />
-      </StatusEffect>
-      <StatusEffect type="OnBroken" target="This" Condition="40" disabledeltatime="true" delay="3.12" stackable="false" />
       <StatusEffect type="OnUse">
         <Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.5" />
       </StatusEffect>

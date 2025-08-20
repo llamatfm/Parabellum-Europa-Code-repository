@@ -42,7 +42,7 @@
 	  <RequiredItems excludeditems="sgt_gaugeset" items="185ammo,shotgunammo" type="Contained" msg="ItemMsgAmmoRequired"> </RequiredItems>
       <RequiredSkill identifier="weapons" level="35" />
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="6" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="4" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="185bullet,shotgunammo" hide="true">
         <StatusEffect type="OnInserted" target="This" targetslot="0" disabledeltatime="true" delay="0.1" stackable="false" comparison="or">
           <Conditional EntityType="eq character" TargetContainer="True" />
@@ -51,7 +51,7 @@
       </Containable>
       <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
       <SubContainer capacity="1" maxstacksize="1">
-        <Containable items="flashlight" hide="false" itempos="39,0" setactive="true" />
+        <Containable items="flashlight" hide="false" itempos="5,1" setactive="true" />
       </SubContainer>
     </ItemContainer>
     <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />

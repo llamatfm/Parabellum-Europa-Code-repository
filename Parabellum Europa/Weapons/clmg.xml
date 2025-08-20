@@ -29,7 +29,7 @@
 		</Deconstruct>
 		<InventoryIcon texture="%ModDir%/Weapons/clmginv.png" sourcerect="0,0,559,612" origin="0.5,0.5"/>
 		<Sprite texture="%ModDir%/Weapons/clmg.png" sourcerect="0,0,782,248" depth="0.55" origin="0.5,0.5"/>
-		<Body width="140" height="60" density="50"/>
+		<Body width="140" height="120" density="50"/>
 		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="44,-10" aimpos="57,3" handle1="-140,-45" handle2="300,10" holdangle="-20" msg="ItemMsgPickUpSelect"/>
 		<RangedWeapon reload="0.1" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="400,20" spread="1.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
 			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
@@ -39,10 +39,13 @@
 			<Sound file="%ModDir%/Sounds/g3.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
 			<Sound file="%ModDir%/Sounds/g3.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
 			<StatusEffect type="OnUse" target="This" Condition="-100"/>
-			<StatusEffect type="Always" target="This" Condition="4">
+			<StatusEffect type="Always" target="This" Condition="8">
 				<Conditional condition="gt 0"/>
 			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="false" delay="0" stackable="false"/>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjam.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="10" stackable="false"/>
 			<StatusEffect type="OnUse">
 				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
 			</StatusEffect>
@@ -123,7 +126,7 @@
 		<PreferredContainer primary="saw,ssaw" minamount="0" maxamount="1" spawnprobability="0.5"/>
 		<PreferredContainer primary="secarmcab"/>
 		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
-		<Price baseprice="800" displaynonempty="true" minleveldifficulty="10">
+		<Price baseprice="600" displaynonempty="true" minleveldifficulty="10">
 			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
 			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
 			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>

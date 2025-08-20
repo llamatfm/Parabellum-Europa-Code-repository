@@ -1,0 +1,144 @@
+<items>
+  <!--qbz-->
+  <Item name="" identifier="qbz" description="" category="Weapon" subcategory="Renegade" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,provocativetohumanai" Scale="0.14" impactsoundtag="weaponlightdrop">
+    <PreferredContainer primary="storagecab,engcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.03" minleveldifficulty="5" />
+    <PreferredContainer secondary="weaponholder" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.25" />
+    <Price baseprice="1100" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.25" sold="false" minamount="0" maxamount="2">
+        <Reputation faction="separatists" min="60" />
+      </Price>
+      <Price storeidentifier="merchantcity" multiplier="1.15" minavailable="0" maxavailable="2">
+        <Reputation faction="separatists" min="60" />
+      </Price>
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1" minavailable="0" maxavailable="5">
+        <Reputation faction="separatists" min="60" />
+      </Price>
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="1" minavailable="0" maxavailable="5">
+        <Reputation faction="separatists" min="60" />
+      </Price>
+    </Price>
+    <Deconstruct time="12">
+      <Item identifier="scp_basicparts" />
+      <Item identifier="aluminium" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="25" requiresrecipe="false" amount="1">
+      <RequiredSkill identifier="weapons" level="65" />
+      <RequiredItem identifier="scp_basicparts" />
+      <RequiredItem identifier="scp_riflekit" mincondition="0.5" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Weapons/qbzinv.png" sourcerect="0,0,534,543" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Weapons/qbz.png" sourcerect="0,0,711,252" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="160" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-8" aimpos="45,7" handle1="0,-60" handle2="100,-20" holdangle="-20" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="0.092" reloadnoskill="0.135" reloadskillrequirement="50" weapondamagemodifier="1.2" penetrationmultiplier="1.3" barrelpos="300,10" spread="0.8" unskilledspread="20" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+	  <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="%ModDir%/Sounds/ak7621.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="%ModDir%/Sounds/ak7621.ogg" type="OnUse" range="3000" frequencymultiplier="0.96" />
+      <Sound file="%ModDir%/Sounds/ak7621.ogg" type="OnUse" range="3000" frequencymultiplier="1.02" />
+      <StatusEffect type="Always" target="This" Condition="0">
+        <Conditional condition="gt 0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="0.3" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="13.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="58ammo" />
+      <RequiredSkill identifier="weapons" level="65" />
+      <StatusEffect type="OnUse" target="This">
+        <Conditional condition="lt 35" />
+      </StatusEffect>
+    </RangedWeapon>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="58ammo" hide="false" itempos="-20,-9" />
+      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+      <SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
+        <Containable items="flashlight" hide="false" itempos="24,2" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.07" />
+      <QualityStat stattype="Condition" value="0.2" />
+    </Quality>
+    <SkillRequirementHint identifier="weapons" level="65" />
+  </Item>
+  <!--20 Round 6.8x51 box mag-->
+	<Item name="" identifier="qbzmag" description="" tags="smallitem,58ammo,ehaammo,58magazine" maxstacksize="8" maxstacksizecharacterinventory="3" category="Weapon" subcategory="Renegade" cargocontaineridentifier="scp_ammocrate" impactsoundtag="impact_metal_light" scale="0.4">
+		<PreferredContainer primary="qbz" minamount="0" maxamount="1" spawnprobability="0.5"/>
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
+		<Price baseprice="400" displaynonempty="true" minleveldifficulty="10">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="separatists" min="55"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="separatists" min="55"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="15" amount="3">
+			<RequiredSkill identifier="weapons" level="45" />
+			<RequiredItem identifier="plastic" />
+			<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2" />
+			RequiredItem identifier="titanium" />
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" />
+		</Fabricate>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="15" amount="3">
+			<RequiredSkill identifier="weapons" level="45" />
+			<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2" />
+			<RequiredItem identifier="titanium" />
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="titanium"/>
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" depth="0.54" sourcerect="598,0,43,63" origin="0.5,0.5"/>
+		<Body width="30" height="40" density="50"/>
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="58projectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="58projectile"/>
+			<StatusEffect type="OnUse" target="This" condition="-3.32" disabledeltatime="true">
+				<SpawnItem identifier="58projectile" spawnposition="ThisInventory"/>
+				<ParticleEmitter particle="scp_spentcasingriflemed" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.35" scalemax="0.35"/>
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+	</Item>
+	<!--5.8x42mm round-->
+	<Item name="" identifier="58projectile" tags="smallitem,58ammo" Scale="0.3" category="Weapon" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.4">
+		<InventoryIcon texture="%ModDir%/Ammo/scp_556round.png" sourcerect="896,960,64,54" origin="0.5,0.5"/>
+		<Sprite texture="%ModDir%/Ammo/scp_556round.png" sourcerect="896,960,64,54" origin="0.5,0.5"/>
+		<Body width="40" height="15" density="40"/>
+		<Pickable slots="Any" msg="ItemMsgPickUpSelect"/>
+		<Projectile characterusable="false" hitscan="true" removeonhit="true">
+			<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,175" scalemultiplier="1,0.6"/>
+			 <Attack structuredamage="1.0" targetforce="1" itemdamage="1" severlimbsprobability="0.05" penetration="0.05">
+				<Affliction identifier="bleeding" strength="20" />
+				<Affliction identifier="bleeding" strength="17.5" probability="0.33" />
+				<Affliction identifier="gunshotwound" strength="18" />
+				<Affliction identifier="gunshotwound" strength="12" probability="0.3" />
+				<Affliction identifier="stun" strength="0.15" probability="0.15" />
+			</Attack>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0"/>
+			</StatusEffect>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure"/>
+				<Conditional hastag="eq door"/>
+			</StatusEffect>
+		</Projectile>
+	</Item>
+</items>

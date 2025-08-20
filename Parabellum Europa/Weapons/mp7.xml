@@ -3,7 +3,7 @@
     <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
     <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
     <PreferredContainer secondary="weaponholder" />
-    <Price baseprice="600" displaynonempty="true">
+    <Price baseprice="150" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="2" multiplier="1.5">
         <Reputation faction="coalition" min="20" />
       </Price>
@@ -33,24 +33,17 @@
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/Weapons/mp7inv.png" sourcerect="0,0,517,562" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/mp7.png" sourcerect="0,0,700,282" depth="0.55" origin="0.5,0.5" />
-    <Body width="140" height="60" density="50" />
+    <Body width="140" height="160" density="50" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="40,10" handle1="-20,-30" handle2="100,-15" holdangle="-35" msg="ItemMsgPickUpSelect" />
-   <RangedWeapon reload="0.063" reloadnoskill="0.25" reloadskillrequirement="30" barrelpos="90,9" spread="2.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+   <RangedWeapon reload="0.063" reloadnoskill="0.25" reloadskillrequirement="30" barrelpos="220,9" spread="2.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
 			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
 			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
+			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1" colormultiplier="255,200,200,200"/>
 			<Sound file="%ModDir%/Sounds/9mmsmg1.ogg" type="OnUse" range="3000" selectionmode="Random"/>
 			<Sound file="%ModDir%/Sounds/9mmsmg1.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
 			<Sound file="%ModDir%/Sounds/9mmsmg1.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
-			<StatusEffect type="OnUse" target="This" Condition="-100"/>
-			<StatusEffect type="Always" target="This" Condition="4">
-				<Conditional condition="gt 0"/>
-			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" delay="0.25">
-				<sound file="%ModDir%/Sounds/battleriflejam.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
-			</StatusEffect>
-			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="5.3" stackable="false"/>
 			<StatusEffect type="OnUse">
-				<Explosion range="150.0" force="0.25" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
+				<Explosion range="150.0" force="0.25" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10"/>
 			</StatusEffect>
 			<StatusEffect type="OnUse" target="Contained">
 				<Use/>
@@ -59,8 +52,6 @@
 			<RequiredSkill identifier="weapons" level="80"/>
 			<StatusEffect type="OnUse" target="This" comparison="and">
 				<Conditional condition="lt 35"/>
-				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
-				<ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
 			</StatusEffect>
 			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true"/>
 		</RangedWeapon>
@@ -72,7 +63,7 @@
       </Containable>
       <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
       <SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
-        <Containable items="flashlight" hide="false" itempos="26,4" setactive="true" />
+        <Containable items="flashlight" hide="false" itempos="21,-4" setactive="true" />
       </SubContainer>
     </ItemContainer>
     <SkillRequirementHint identifier="weapons" level="35" />

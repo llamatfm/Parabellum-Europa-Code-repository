@@ -33,7 +33,7 @@
     </Deconstruct>
     <InventoryIcon texture="%ModDir%/Weapons/pmxinv.png" sourcerect="0,0,516,566" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Weapons/pmx.png" sourcerect="0,0,700,284" depth="0.55" origin="0.5,0.5" />
-    <Body width="140" height="60" density="50" />
+    <Body width="140" height="160" density="50" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="40,10" handle1="-40,-60" handle2="100,-35" holdangle="-35" msg="ItemMsgPickUpSelect" />
    <RangedWeapon reload="0.09" reloadnoskill="0.25" reloadskillrequirement="90" barrelpos="180,9" spread="2.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
    			<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="8.0,2.0" colormultiplier="255,200,200,225" />

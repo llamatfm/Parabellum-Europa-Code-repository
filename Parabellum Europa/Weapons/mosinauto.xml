@@ -1,6 +1,6 @@
 <items>
 	<!--M250-->
-	<Item name="" description="" identifier="mosinauto" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_weaponcrate" tags="mediumitem,weapon,gun,gunsmith,bulkyweapon,mountableweapon" Scale="0.32" impactsoundtag="weaponheavydrop">
+	<Item name="" description="" identifier="mosinauto" category="Weapon" subcategory="Renegade" cargocontaineridentifier="scp_weaponcrate" tags="mediumitem,weapon,gun,gunsmith,bulkyweapon,mountableweapon" Scale="0.32" impactsoundtag="weaponheavydrop">
 		<PreferredContainer primary="secarmcab"/>
 		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15"/>
 		<PreferredContainer secondary="weaponholder"/>

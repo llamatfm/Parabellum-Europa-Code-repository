@@ -1,45 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Parabellum Europa" modversion="1.0" corepackage="False" steamworkshopid="3552344400" gameversion="1.9.8.0">
-  <Item file="%ModDir%/Weapons/spr.xml" />
-  <Item file="%ModDir%/Weapons/rsc.xml" />
-  <Item file="%ModDir%/Weapons/cac.xml" />
-  <Item file="%ModDir%/Weapons/sopmod.xml" />
-  <Item file="%ModDir%/Weapons/PKP.xml" />
-  <Item file="%ModDir%/Weapons/cgl.xml" />
-  <Item file="%ModDir%/Weapons/lamg.xml" />
-  <Item file="%ModDir%/Weapons/xm7.xml" />
-  <Item file="%ModDir%/Weapons/m250.xml" />
-  <Item file="%ModDir%/Weapons/1911.xml" />
-  <Item file="%ModDir%/Weapons/clmg.xml" />
-  <Item file="%ModDir%/Weapons/clmgsopmod.xml" />
+<contentpackage name="Parabellum Europa" modversion="1.40" corepackage="False" steamworkshopid="3552344400" gameversion="1.11.5.0">
+  <Item file="%ModDir%/Weapons/machineguns.xml" />
+  <Item file="%ModDir%/Weapons/assaultrifles.xml" />
+  <Item file="%ModDir%/Weapons/submachineguns.xml" />
+  <Item file="%ModDir%/Weapons/battlerifles.xml" />
+  <Item file="%ModDir%/Weapons/pistols.xml" />
+  <Item file="%ModDir%/Weapons/explosives.xml" />
+  <Item file="%ModDir%/Weapons/others.xml" />
   <Item file="%ModDir%/Armor/lowprofilec.xml" />
-  <Item file="%ModDir%/Weapons/rbr.xml" />
-  <Item file="%ModDir%/Weapons/rbc.xml" />
-  <Item file="%ModDir%/Weapons/m72.xml" />
-  <Item file="%ModDir%/Weapons/raro.xml" />
-  <Item file="%ModDir%/Weapons/mp7.xml" />
-  <Item file="%ModDir%/Weapons/4-6.xml" />
-  <Item file="%ModDir%/Weapons/mp5k.xml" />
-  <Item file="%ModDir%/Weapons/mosin.xml" />
-  <Item file="%ModDir%/Weapons/mosinauto.xml" />
-  <Item file="%ModDir%/Weapons/carlg.xml" />
-  <Item file="%ModDir%/Weapons/carsopmod.xml" />
-  <Item file="%ModDir%/Weapons/lever.xml" />
-  <Item file="%ModDir%/Weapons/sw500.xml" />
-  <Item file="%ModDir%/Weapons/pmx.xml" />
   <Item file="%ModDir%/Items/hurdygurdy.xml" />
-  <Item file="%ModDir%/Weapons/aug.xml" />
-  <Item file="%ModDir%/Weapons/malyuk.xml" />
-  <Item file="%ModDir%/Weapons/badger.xml" />
-  <Item file="%ModDir%/Weapons/mk18.xml" />
-  <Item file="%ModDir%/Weapons/qbz.xml" />
-  <Item file="%ModDir%/Weapons/implodinator.xml" />
-  <Item file="%ModDir%/Weapons/g11.xml" />
-  <Item file="%ModDir%/Weapons/zip9.xml" />
   <Item file="%ModDir%/Melee/corbine.xml" />
-  <Item file="%ModDir%/Explosives/rgsc.xml" />
-  <Item file="%ModDir%/Explosives/Europa.xml" />
+  <Item file="%ModDir%/Explosives/explosives.xml" />
   <Item file="%ModDir%/Gear/engi.xml" />
-  <Submarine file="%ModDir%/Subs/Shooting Range.sub" />
+  <Item file="%ModDir%/weebshit/pillows.xml" />
   <Text file="%ModDir%/Text/textoverrides.xml" />
+  <Submarine file="%ModDir%/Subs/Shooting Range.sub" />
 </contentpackage>

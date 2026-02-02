@@ -1,4 +1,7 @@
-<Item name="" description="" identifier="rgsc" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,handgrenade,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_heavy">
+<Override>
+<Items>
+	<!--Railgun Demolition Charge-->
+	<Item name="" description="" identifier="rgsc" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,handgrenade,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_heavy">
     <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
     <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" minleveldifficulty="10" />
     <PreferredContainer secondary="abandonedsecarmcab" minamount="0" maxamount="2" spawnprobability="0.1" minleveldifficulty="10" />
@@ -21,7 +24,7 @@
 	  <RequiredItem identifier="iron" />
     </Fabricate>
     <Sprite texture="%ModDir%/Explosives/rgsc.png" sourcerect="0,0,30,200" depth="0.55" origin="0.5,0.5" />
-    <BrokenSprite texture="%ModDir%/Explosives/rgsc.png" sourcerect="0,0,30,200" depth="0.55" origin="0.5,0.5" maxcondition="99.9" />
+    <BrokenSprite texture="%ModDir%/Explosives/rgscinv.png" sourcerect="0,0,152,152" depth="0.55" origin="0.5,0.5" maxcondition="99.9" />
     <Body radius="25" height="22" density="30" />
     <ItemComponent characterusable="false">
       <StatusEffect type="OnBroken" target="This">
@@ -74,3 +77,56 @@
       </StatusEffect>
     </ItemComponent>
   </Item>
+  <!--the moon-->
+  <Item name="" description="" identifier="europa" category="Weapon" subcategory="Grenades and Explosives" maxstacksize="2" maxstacksizecharacterinventory="1" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,handgrenade,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <Sprite texture="%ModDir%/Explosives/europa.png" sourcerect="0,0,123,123" depth="0.55" origin="0.5,0.5" />
+    <BrokenSprite texture="%ModDir%/Explosives/europa.png" sourcerect="0,0,123,123" depth="0.55" origin="0.5,0.5" maxcondition="99.9" />
+    <Body radius="25" height="22" density="30" />
+    <ItemComponent characterusable="false">
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnUse" volume="3" range="8000" frequencymultiplier="0.95" selectionmode="All" />
+        <sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnUse" range="8000" />
+		<sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnUse" volume="1.75" range="8000" frequencymultiplier="0.95" selectionmode="All" />
+        <sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnUse" range="8000" />
+		<sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnUse" volume="3" range="8000" frequencymultiplier="0.95" selectionmode="All" />
+        <sound file="%ModDir%/Sounds/nukesmall.ogg" type="OnUse" range="8000" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="400" velocitymin="500" velocitymax="1000" scalemin="1000" scalemax="1000" />
+        <Explosion range="100000.0" structuredamage="100000" ballastfloradamage="1000000" itemdamage="100000" force="600" severlimbsprobability="1" decal="explosion" decalsize="1000000" interactthroughwalls="true">
+          <Affliction identifier="bleeding" strength="10000" />
+          <Affliction identifier="explosiondamage" strength="10000" />
+          <Affliction identifier="stun" strength="10000" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+    <Throwable slots="Any,RightHand+LeftHand" holdpos="0,0" handle1="0,-20" handle2="0,20" aimpos="35,-18" throwforce="1.3" reload="1.25" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true" checkconditionalalways="true">
+        <sound file="%ModDir%/Sounds/grenadethrow.ogg" range="1000" frequencymultiplier="0.9" />
+      </StatusEffect>
+      <!-- Skip the removal of safeties and explode immediatly if inside of a detonator, railgun shell or a depth charge-->
+      <StatusEffect type="OnUse" targettype="This" Condition="0" setvalue="true" comparison="OR">
+        <Conditional HasTag="detonator" targetcontainer="true" />
+        <Conditional HasTag="railgunammo" targetcontainer="true" />
+        <Conditional HasTag="depthchargeammo" targetcontainer="true" />
+      </StatusEffect>
+      <!-- forcefully pull the pin if player hasnt done so -->
+      <StatusEffect type="OnSecondaryUse" target="This" disabledeltatime="true" checkconditionalalways="true">
+        <Conditional IsActive="false" targetitemcomponent="ItemComponent" />
+        <Use />
+      </StatusEffect>
+    </Throwable>
+    <!-- Activating the ItemComponent starts the timer -->
+    <ItemComponent IsActive="false" CharacterUsable="true">
+      <!--reduce condition by 1 to mark the user as the one responsible for the item breaking and exploding -->
+      <StatusEffect type="OnUse" targettype="This" IsActive="true" DontCleanUp="true" IsDangerous="true" comparison="AND" condition="-1">
+        <Conditional HasTag="neq detonator" targetcontainer="true" />
+        <Conditional HasTag="neq railgunammo" targetcontainer="true" />
+        <Conditional HasTag="neq depthchargeammo" targetcontainer="true" />
+        <Conditional IsActive="false" targetitemcomponent="ItemComponent" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" targettype="This" Condition="-1000">
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+</Items>
+</Override>

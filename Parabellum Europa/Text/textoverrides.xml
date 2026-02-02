@@ -25,7 +25,7 @@
 	<entityname.68APsmallbeltbag>6.8 Physicorium AP Belt Bag</entityname.68APsmallbeltbag>
 	<entitydescription.68APsmallbeltbag>A 50 round belt bag filled with Physicorium cored 6.8x51 rounds, featuring the highest penetration of any conventional round available on Europa, access to this ammo is strictly prohibited by the Coalition. A true tank buster.</entitydescription.68APsmallbeltbag>
 	<entityname.m250>Coalition NGSA</entityname.m250>
-	<entitiydescription.m250>The Coalitions newest next generation medium machinegun, the Next Generation Squad Automatic is a state-of-the-art weapon that delivers unmatched firepower and armor penetration for the Coalitions high tier SOF squads. It's low recoil, rapid barrel cooling, and 6.8x51 chambering make it a favorite amount Coalition special operations fireteams and rapid response units.</entitiydescription.m250>
+	<entitydescription.m250>‖color:gui.blue‖His M250 sat in his lap, dark and oily, as pristine as the day he'd been issued it...‖end‖ The Coalitions newest next generation medium machinegun, the Next Generation Squad Automatic is a state-of-the-art weapon that delivers unmatched firepower and armor penetration for the Coalitions high tier SOF squads.</entitydescription.m250>
 	<entityname.1911gi>Coalition Light Handcannon</entityname.1911gi>
 	<entitydescription.1911gi>A rugged, and slightly oversized sidearm chambered in .50 GI. Favored by Europa's civilian contractors, submariners, and outpost security personnel alike. Though heavier than equivalent sidearms, it's heavy round is known to put down crawlers, husks, and worse, provided the shooter can handle the recoil. What it lacks in armor penetration, it makes up in sheer, brutal stopping power.</entitydescription.1911gi>
 	<entityname.50gimag>Coalition Light Handcannon Magazine</entityname.50gimag>
@@ -41,7 +41,7 @@
 	<entityname.lppc>Low Profile Plate Carrier</entityname.lppc>
 	<entitydescription.lppc>An exceptionally low profile and lightweight plate carrier, fitted with a swimmer-cut Physicorium-durasteel plate, the LPPC is meant to offer uncompromising protection without the great bulk of other alternatives.</entitydescription.lppc>
 	<entityname.rbr>Dissent Precision Rifle</entityname.rbr>
-	<entitydescription.rbr>A heavily reworked variant of the Renegade Battle Rifle, chambered in 7.62x51 and fitted with the OSNAZ-KIT, the Dissent precision rifle offers high accuracy, armor penetration, and sustained fire capability. The upper assembly has been completely replaced with a durasteel alloy, and a reinforced recoil buffer allows for comfortable shooting in all environments. Modular, powerful, and brutally effective-this is the rifle of insurgents who plan to make their shots count.</entitydescription.rbr>
+	<entitydescription.rbr>‖color:gui.blue‖In her hands-the modernized G3 Dissent Rifle - monolithic, cold, and deadly...‖end‖ A heavily reworked variant of the Renegade Battle Rifle, chambered in 7.62x51 and fitted with the OSNAZ-KIT, the Dissent precision rifle offers high accuracy, armor penetration, and sustained fire capability. </entitydescription.rbr>
 	<entityname.dutmag>Battle Rifle Depleted Uranium-Tungsten Magazine</entityname.dutmag>
 	<entitydescription.dutmag>A surplus 20 round battle rifle magazine loaded with armor-piercing 7.62x51mm cartridges. Each round features a depleted uranium-tungsten alloy penetrator, offering a devastating deal of penetration against coalition body armor, mech suits, and light submarines. Crude metallurgy and heat treatment make these rounds degrading to most weapons barrels, but for the renegades, they're a brutally effective substitute for the Coalition's high tech 6.8x51.</entitydescription.dutmag>
 	<entityname.rbc>Dissent Battle Carbine</entityname.rbc>
@@ -56,8 +56,8 @@
 	<entitydescription.raro>A specially outfitted variant of the Renegade Assault Rifle fitted with the OSNAZ-KIT, a field modification often used by low-tier Separatist SOF. This configuration features a night vision compatible optic, suppressor to reduce report and muzzle flash, and LAM for low light engagements. Reliable in the wet filth of Europa's brutal seas, and highly effective in close quarters, this rifle is the perfect option for when you need to clear a room, and you'd rather not wake the neighbors.</entitydescription.raro>
 	<entityname.mp7>Coalition PDW</entityname.mp7>
 	<entitydescription.mp7>Compact, controllable, and heavily overengineered, the Coalition PDW offers a reliable solution to fight light armor in Europa's claustrophobic CQB environments. Firing a 4.6x30 saboted cartridge at a high rate of fire, the PDW excels at close quarters engagements.</entitydescription.mp7>
-	<entityname.mp7magazine>Coalition PDW Magazine</entityname.mp7magazine>
-	<entitydescription.mp7magazine>A 40 round magazine filled with 4.6x30mm saboted rounds meant for the Coalition PDW.</entitydescription.mp7magazine>
+	<entityname.mp7mag>Coalition PDW Magazine</entityname.mp7mag>
+	<entitydescription.mp7mag>A 40 round magazine filled with 4.6x30mm saboted rounds meant for the Coalition PDW.</entitydescription.mp7mag>
 	<entityname.psa46>Coalition Tactical Pistol</entityname.psa46>
 	<entitydescription.psa46>A lightweight, fast firing pistol firing the same 4.6x30mm round as the Coalition PDW, this pistol offers an effective option for personnel who need the capability to counter light armor in a tiny package.</entitydescription.psa46>
 	<entityname.46pistolmagazine>Coalition Tactical Pistol Magazine</entityname.46pistolmagazine>
@@ -125,7 +125,17 @@
 	<entityname.zip9>Coalition Micro Pistol</entityname.zip9>
 	<entitydescription.zip9>A cheaply made plastic piece of shit sold as a pistol, better used as a brick. Useful for little more than plinking and alleyway robberies, but still a gun nontheless.</entitydescription.zip9>
 	<entityname.zip9mag>Coalition Micro Pistol Magazine</entityname.zip9mag>
-	<entitydescription.zip9mag>An 8 round disposible magazine fitted for the Coalition Micro Pistol. Prone to feed failures.</entitydescription.zip9mag>
+	<entitydescription.zip9mag>An 8 round disposable magazine fitted for the Coalition Micro Pistol. Prone to feed failures.</entitydescription.zip9mag>
+	<entityname.8gexplosive>8 Gauge Explosive Slug</entityname.8gexplosive>
+	<entitydescription.8gexplosive>An 8 Gauge slug round filled to the brim with high explosives, practically the equivalent of a handheld 20mm autocannon round. Use with care.</entitydescription.8gexplosive>
+	<entityname.m202>FLASH Launcher</entityname.m202>
+	<entitydescription.m202>A reuseable 4-shot incendiary rocket launcher. Comparable in power to the Coalition's lightweight rocket launcher, but allowing a user to let off 4 rounds in rapid succession.</entitydescription.m202>
+	<entityname.rshg-2>Renegade Thermobaric Launcher</entityname.rshg-2>
+	<entitydescription.rshg-2>A crudely made disposible rocket launcher firing a 72.5mm thermobaric grenade. Use with caution, prone to catastrophic failures. </entitydescription.rshg-2>
 	<entityname.europa>Europa</entityname.europa>
 	<entitydescription.europa>Parabellum</entitydescription.europa>
+	<entityname.tingyun>Tingyun Pillow</entityname.tingyun>
+	<entitydescription.tingyun>fop fop fop fop fop. get a wife/husband bro.</entitydescription.tingyun>
+	<entityname.xilonen>Xilonen Pillow</entityname.xilonen>
+	<entitydescription.xilonen>Everyone's favorite tomboy mechanic. Maybe an inspiration for your mechanics?</entitydescription.xilonen>
 </infotexts>

@@ -1,0 +1,655 @@
+<Override>
+<Items>
+	<!--PKP Bullpup-->
+	<Item name="" description="" identifier="pkp" category="Weapon" subcategory="Renegade" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,bulkyweapon,provocativetohumanai" Scale="0.15
+ " cargocontaineridentifier="scp_weaponcrate" impactsoundtag="weaponheavydrop">
+    <PreferredContainer primary="secarmcab" secondary="weaponholder,armcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="weaponholder" />
+    <Price baseprice="2800" displaynonempty="true" minleveldifficulty="20">
+      <Price storeidentifier="merchantoutpost" sold="false" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="1">
+        <Reputation faction="separatists" min="70" />
+      </Price>
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="0" maxavailable="2">
+        <Reputation faction="separatists" min="70" />
+      </Price>
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="2">
+        <Reputation faction="separatists" min="70" />
+      </Price>
+    </Price>
+    <Deconstruct time="35">
+      <Item identifier="scp_basicparts" amount="4" />
+      <Item identifier="steel" amount="2" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="weaponfabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="scp_basicparts" amount="6" />
+      <RequiredItem identifier="steel" amount="7" />
+      <RequiredItem identifier="plastic" amount="5" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Weapons/PKPinv.png" sourcerect="0,0,591,630" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Weapons/PKP.png" sourcerect="0,0,779,245" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="200" density="50" />
+	<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-20" aimpos="50,-10" handle1="-150,-20" handle2="130,9" holdangle="-30" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="0.1" reloadnoskill="0.175" reloadskillrequirement="50" weapondamagemodifier="0.7" barrelpos="700,40" spread="18" unskilledspread="55" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="8.0,2.0" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2.0,6.0" colormultiplier="255,200,200,200" />
+      <Sound file="%ModDir%/Sounds/pkp1.ogg" type="OnUse" range="3000" selectionmode="Random" volume="1.1" />
+      <Sound file="%ModDir%/Sounds/pkp1.ogg" type="OnUse" range="3000" volume="1.1" frequencymultiplier="0.95" />
+      <Sound file="%ModDir%/Sounds/pkp1.ogg" type="OnUse" range="3000" volume="1.1" frequencymultiplier="1.05" />
+      <StatusEffect type="OnUse" target="this" tags="fired" duration="0.15" setvalue="true" stackable="false" />
+      <!-- Recoil -->
+      <StatusEffect type="OnUse" target="this" spread="-2.25" stackable="true" setvalue="false" disabledeltatime="true" comparison="and">
+        <Conditional Spread="gt 10" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="this" spread="1.5" stackable="true" disabledeltatime="true" interval="0.025" setvalue="false" comparison="and">
+        <Conditional hasstatustag="neq fired" />
+        <Conditional Spread="lt 40" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="150.0" force="0.7" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="25" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.75" setvalue="true">
+        <Conditional recoilstabilized="lte 0" />
+      </StatusEffect>
+	  <StatusEffect type="OnUse" target="This" Condition="-150"/>
+		<StatusEffect type="Always" target="This" Condition="8">
+		<Conditional condition="gt 0"/>
+		</StatusEffect>
+		<StatusEffect type="OnBroken" target="This" delay="0.5">
+		<sound file="%ModDir%/Sounds/machinegunjam.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+		</StatusEffect>
+		<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="10" stackable="false"/>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems excludeditems="sgt_gaugeset" msg="ItemmsgAmmoRequired" type="Contained" tags="gpmgammo">
+        <Upgrade modversion="1.1.0" excludeditems="sgt_gaugeset" />
+      </RequiredItems>
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="-10,-87" rotation="30" containedstateindicatorslot="0" containedstateindicatorstyle="bullet">
+      <Containable items="gpmgammo">
+      </Containable>
+      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="30,1" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="6000" fadeouttime="5" />
+    <SkillRequirementHint identifier="weapons" level="70" />
+    <Quality>
+      <QualityStat stattype="FiringRateMultiplier" value="0.0334" />
+    </Quality>
+  </Item>
+  <!--M250-->
+	<Item name="" description="" identifier="M250" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_weaponcrate" tags="mediumitem,weapon,gun,gunsmith,bulkyweapon,mountableweapon" Scale="0.16" impactsoundtag="weaponheavydrop">
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15"/>
+		<PreferredContainer secondary="weaponholder"/>
+		<Price baseprice="3500" displaynonempty="true" minleveldifficulty="25">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="1" maxavailable="1">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="1">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="weaponfabricator" requiredtime="35">
+			<RequiredSkill identifier="weapons" level="90"/>
+			<RequiredItem identifier="scp_riflekit" mincondition="3"/>
+			<RequiredItem identifier="steel" amount="6"/>
+			<RequiredItem identifier="titaniumaluminiumalloy" amount="4"/>
+			<RequiredItem identifier="plastic" ammount="2"/>
+		</Fabricate>
+		<Deconstruct time="35">
+			<Item identifier="steel" amount="2"/>
+			<Item identifier="titaniumaluminiumalloyl"/>
+			<Item identifier="plastic"/>
+		</Deconstruct>
+		<InventoryIcon texture="%ModDir%/Weapons/m250inv.png" sourcerect="0,0,588,599" origin="0.5,0.5"/>
+		<Sprite texture="%ModDir%/Weapons/m250.png" sourcerect="0,0,787,351" depth="0.55" origin="0.5,0.5"/>
+		<Body width="140" height="60" density="250"/>
+		<Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="44,-20" aimpos="57,3" handle1="-190,-60" handle2="300,10" holdangle="20" msg="ItemMsgPickUpSelect"/>
+		<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+			<sprite name="m250" texture="%ModDir%/Weapons/m250.png" canbehiddenbyotherwearables="false" sourcerect="0,0,787,351" rotation="90" inheritlimbdepth="false" depth="0.6" limb="Torso" scale="0.15" origin="0.5,0.95" />
+			<StatValue stattype="WalkingSpeed" value="-0.1" />
+			<StatValue stattype="SwimmingSpeed" value="-0.15" />
+		</Wearable>
+		<RangedWeapon reload="0.1" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="400,20" spread="0.6" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
+			<ParticleEmitter particle="muzzleflash" particleamount="1" scalemultiplier="1,1" velocitymin="0" velocitymax="0" />
+			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" selectionmode="Random"/>
+			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
+			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
+			<StatusEffect type="OnUse" target="This" Condition="-120"/>
+			<StatusEffect type="Always" target="This" Condition="8">
+				<Conditional condition="gt 0"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjamfast.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="4.5" stackable="false"/>
+			<StatusEffect type="OnUse">
+				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="Contained">
+				<Use/>
+			</StatusEffect>
+			<RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="68largebeltammo,68smallbeltammo" />
+			<RequiredSkill identifier="weapons" level="80"/>
+			<StatusEffect type="OnUse" target="This" comparison="and">
+				<Conditional condition="lt 35"/>
+				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
+				<ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
+			</StatusEffect>
+			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true"/>
+		</RangedWeapon>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+			<Containable items="68largebeltammo,68smallbeltammo" hide="false" itempos="-12,-6"/>
+			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5"/>
+			<SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
+				<Containable items="flashlight" hide="false" itempos="25,1" setactive="true"/>
+			</SubContainer>
+		</ItemContainer>
+		<aitarget sightrange="2000" soundrange="4000" fadeouttime="5"/>
+		<Quality>
+			<QualityStat stattype="FirepowerMultiplier" value="0.07"/>
+			<QualityStat stattype="Condition" value="0.2"/>
+		</Quality>
+		<SkillRequirementHint identifier="weapons" level="80"/>
+	</Item>
+	<!--100 Round 6.8x51 belt bag-->
+	<Item name="" identifier="68largebeltbag" description="" tags="smallitem,68largebeltammo,ehaammo,68largebelt" maxstacksize="4" maxstacksizecharacterinventory="1" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_ammocrate" impactsoundtag="impact_metal_light" scale="0.4">
+		<PreferredContainer primary="m250" minamount="0" maxamount="1" spawnprobability="0.5"/>
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
+		<Price baseprice="1200" displaynonempty="true" minleveldifficulty="10">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="10" amount="2">
+			<RequiredSkill identifier="weapons" level="80"/>
+			<RequiredItem identifier="steel" amount="5"/>
+			<RequiredItem identifier="flashpowder" amount="4"/>
+			<RequiredItem identifier="titanium" amount="4"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Fabricate suitablefabricators="reloadfabricator" displayname="recycleitem" requiredtime="10" amount="1">
+			<RequiredSkill identifier="weapons" level="40"/>
+			<RequiredItem tag="68largebelt" mincondition="0.0" maxcondition="0.99" usecondition="false" />
+			<RequiredItem identifier="titanium" amount="2"/>
+			<RequiredItem identifier="flashpowder" amount="2"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket"/>
+		</Fabricate>
+		<Deconstruct time="15">
+			<Item identifier="steel"/>
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" depth="0.54" sourcerect="79,0,34,57" origin="0.5,0.5"/>
+		<Body width="30" height="40" density="50"/>
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="68projectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="68projectile"/>
+			<StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+				<SpawnItem identifier="68projectile" spawnposition="ThisInventory"/>
+				<ParticleEmitter particle="scp_spentcasingriflemed" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.35" scalemax="0.35"/>
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+	</Item>
+	<!--KAC LAMG-->
+	<Item name="" description="" identifier="lamg" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_weaponcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.16" impactsoundtag="weaponheavydrop">
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15"/>
+		<PreferredContainer secondary="weaponholder"/>
+		<Price baseprice="3500" displaynonempty="true" minleveldifficulty="25">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="1" maxavailable="1">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="1">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="weaponfabricator" requiredtime="35">
+			<RequiredSkill identifier="weapons" level="90"/>
+			<RequiredItem identifier="scp_riflekit" mincondition="2"/>
+			<RequiredItem identifier="steel" amount="4"/>
+			<RequiredItem identifier="titaniumaluminiumalloy" amount="2"/>
+		</Fabricate>
+		<Deconstruct time="35">
+			<Item identifier="steel" amount="2"/>
+			<Item identifier="titaniumaluminiumalloyl"/>
+			<Item identifier="plastic"/>
+		</Deconstruct>
+		<InventoryIcon texture="%ModDir%/Weapons/lamginv.png" sourcerect="0,0,567,598" origin="0.5,0.5"/>
+		<Sprite texture="%ModDir%/Weapons/lamg.png" sourcerect="0,0,766,239" depth="0.55" origin="0.5,0.5"/>
+		<Body width="140" height="160" density="50"/>
+		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="44,-10" aimpos="57,3" handle1="-140,-45" handle2="300,10" holdangle="-20" msg="ItemMsgPickUpSelect"/>
+		<RangedWeapon reload="0.1" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="360,15" spread="1.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
+			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1" colormultiplier="255,200,200,200"/>
+			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" selectionmode="Random"/>
+			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
+			<Sound file="%ModDir%/Sounds/mag1.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
+			<StatusEffect type="OnUse" target="This" Condition="-130"/>
+			<StatusEffect type="Always" target="This" Condition="8">
+				<Conditional condition="gt 0"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjamfast.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="4.5" stackable="false"/>
+			<StatusEffect type="OnUse">
+				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="Contained">
+				<Use/>
+			</StatusEffect>
+			<RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="68smallbeltammo" />
+			<RequiredSkill identifier="weapons" level="80"/>
+			<StatusEffect type="OnUse" target="This" comparison="and">
+				<Conditional condition="lt 35"/>
+				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
+				<ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
+			</StatusEffect>
+			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true"/>
+		</RangedWeapon>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+			<Containable items="68smallbeltammo" hide="false" itempos="-2,-13"/>
+			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5"/>
+			<SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
+				<Containable items="flashlight" hide="false" itempos="25,1" setactive="true"/>
+			</SubContainer>
+		</ItemContainer>
+		<aitarget sightrange="2000" soundrange="4000" fadeouttime="5"/>
+		<Quality>
+			<QualityStat stattype="FirepowerMultiplier" value="0.07"/>
+			<QualityStat stattype="Condition" value="0.2"/>
+		</Quality>
+		<SkillRequirementHint identifier="weapons" level="80"/>
+	</Item>
+	<!--50 Round 6.8x51 belt bag-->
+	<Item name="" identifier="68smallbeltbag" description="" tags="smallitem,68smallbeltammo,ehaammo,68smallbelt" maxstacksize="4" maxstacksizecharacterinventory="2" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_ammocrate" impactsoundtag="impact_metal_light" scale="0.3">
+		<PreferredContainer primary="lamg" minamount="0" maxamount="1" spawnprobability="0.5"/>
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
+		<Price baseprice="800" displaynonempty="true" minleveldifficulty="10">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="10" amount="2">
+			<RequiredSkill identifier="weapons" level="80"/>
+			<RequiredItem identifier="steel" amount="2"/>
+			<RequiredItem identifier="flashpowder"/>
+			<RequiredItem identifier="titanium" amount="2"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Fabricate suitablefabricators="reloadfabricator" displayname="recycleitem" requiredtime="15" amount="2">
+			<RequiredSkill identifier="weapons" level="40"/>
+			<RequiredItem tag="68smallbelt" mincondition="0.0" maxcondition="0.99" usecondition="false" />
+			<RequiredItem identifier="steel" amount="2"/>
+			<RequiredItem identifier="titanium" amount="2"/>
+			<RequiredItem identifier="flashpowder"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Deconstruct time="15">
+			<Item identifier="steel"/>
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" depth="0.54" sourcerect="42,0,35,45" origin="0.5,0.5"/>
+		<Body width="30" height="40" density="50"/>
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="68projectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="68projectile"/>
+			<StatusEffect type="OnUse" target="This" condition="-2" disabledeltatime="true">
+				<SpawnItem identifier="68projectile" spawnposition="ThisInventory"/>
+				<ParticleEmitter particle="scp_spentcasingriflemed" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.35" scalemax="0.35"/>
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+	</Item>
+	<!--50 Round 6.8x51 Physicrium AP belt bag-->
+	<Item name="" identifier="68APsmallbeltbag" description="" tags="smallitem,68smallbeltammo,ehaammo,68smallbelt" maxstacksize="4" maxstacksizecharacterinventory="2" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_ammocrate" impactsoundtag="impact_metal_light" scale="0.4">
+		<PreferredContainer primary="lamg" minamount="0" maxamount="1" spawnprobability="0.5"/>
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
+		<Price baseprice="800" displaynonempty="true" minleveldifficulty="10">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="90"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="10" amount="2">
+			<RequiredSkill identifier="weapons" level="80"/>
+			<RequiredItem identifier="steel" amount="2"/>
+			<RequiredItem identifier="flashpowder" amount="3"/>
+			<RequiredItem identifier="physicorium" amount="2"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Fabricate suitablefabricators="reloadfabricator" displayname="recycleitem" requiredtime="15" amount="2">
+			<RequiredSkill identifier="weapons" level="40"/>
+			<RequiredItem tag="68smallbelt" mincondition="0.0" maxcondition="0.99" usecondition="false" />
+			<RequiredItem identifier="steel" amount="1"/>
+			<RequiredItem identifier="flashpowder" amount="3"/>
+			<RequiredItem identifier="physicorium" amount="2"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Deconstruct time="15">
+			<Item identifier="steel"/>
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" depth="0.54" sourcerect="79,69,33,42" origin="0.5,0.5"/>
+		<Body width="30" height="40" density="50"/>
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="68APprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="68APprojectile"/>
+			<StatusEffect type="OnUse" target="This" condition="-2" disabledeltatime="true">
+				<SpawnItem identifier="68APprojectile" spawnposition="ThisInventory"/>
+				<ParticleEmitter particle="scp_spentcasingriflemed" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.35" scalemax="0.35"/>
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+	</Item>
+	<!--6.8x51mm Physicorium AP round-->
+	<Item name="" identifier="68APprojectile" tags="smallitem,68ammo" Scale="0.3" category="Weapon" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.4">
+		<InventoryIcon texture="%ModDir%/Ammo/scp_556round.png" sourcerect="896,960,64,54" origin="0.5,0.5"/>
+		<Sprite texture="%ModDir%/Ammo/scp_556round.png" sourcerect="896,960,64,54" origin="0.5,0.5"/>
+		<Body width="40" height="15" density="40"/>
+		<Pickable slots="Any" msg="ItemMsgPickUpSelect"/>
+		<Projectile characterusable="false" hitscan="true" removeonhit="true">
+			<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,0,255,200" scalemultiplier="1,0.6"/>
+			<Attack structuredamage="1.2" targetforce="4" itemdamage="8" severlimbsprobability="0.35" penetration="0.75">
+				<Affliction identifier="bleeding" strength="20"/>
+				<Affliction identifier="bleeding" strength="30" probability="0.45"/>
+				<Affliction identifier="gunshotwound" strength="40"/>
+				<Affliction identifier="gunshotwound" strength="25" probability="0.2"/>
+				<Affliction identifier="stun" strength="0.5" probability="0.25"/>
+			</Attack>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0"/>
+			</StatusEffect>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure"/>
+				<Conditional hastag="eq door"/>
+			</StatusEffect>
+		</Projectile>
+	</Item>
+	<!--M249 SOPMOD-->
+	<Item name="" description="" identifier="ssaw" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_weaponcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.16" impactsoundtag="weaponheavydrop">
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15"/>
+		<PreferredContainer secondary="weaponholder"/>
+		<Price baseprice="3000" displaynonempty="true" minleveldifficulty="25">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="1" maxavailable="1">
+				<Reputation faction="coalition" min="75"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="1">
+				<Reputation faction="coalition" min="75"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="weaponfabricator" requiredtime="35">
+			<RequiredSkill identifier="weapons" level="70"/>
+			<RequiredItem identifier="scp_riflekit" amount="3"/>
+			<RequiredItem identifier="steel" amount="2"/>
+			<RequiredItem identifier="titaniumaluminiumalloy" amount="3"/>
+		</Fabricate>
+		<Deconstruct time="35">
+			<Item identifier="steel" amount="2"/>
+			<Item identifier="titaniumaluminiumalloyl"/>
+			<Item identifier="plastic"/>
+		</Deconstruct>
+		<InventoryIcon texture="%ModDir%/Weapons/clmgsopmodinv.png" sourcerect="0,0,621,612" origin="0.5,0.5"/>
+		<Sprite texture="%ModDir%/Weapons/clmgsopmod.png" sourcerect="0,0,782,260" depth="0.55" origin="0.5,0.5"/>
+		<Body width="140" height="120" density="50"/>
+		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="44,-10" aimpos="57,3" handle1="-140,-45" handle2="300,10" holdangle="-20" msg="ItemMsgPickUpSelect"/>
+		<RangedWeapon reload="0.07" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="400,20" spread="1.2" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
+			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1" colormultiplier="255,200,200,200"/>
+			<Sound file="%ModDir%/Sounds/clmgsopmod.ogg" type="OnUse" range="3000" selectionmode="Random"/>
+			<Sound file="%ModDir%/Sounds/clmgsopmod.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
+			<Sound file="%ModDir%/Sounds/clmgsopmod.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
+			<StatusEffect type="OnUse" target="This" Condition="-110"/>
+			<StatusEffect type="Always" target="This" Condition="13">
+				<Conditional condition="gt 0"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjamfast.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="4.5" stackable="false"/>
+			<StatusEffect type="OnUse">
+				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="Contained">
+				<Use/>
+			</StatusEffect>
+			<RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="556beltammo" />
+			<RequiredSkill identifier="weapons" level="60"/>
+			<StatusEffect type="OnUse" target="This" comparison="and">
+				<Conditional condition="lt 35"/>
+				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="0.25" scalemax="0.75" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
+				<ParticleEmitter particle="weldspark" particleamount="4" velocitymin="2000" velocitymax="3000" scalemin="0.2" scalemax="0.35" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
+			</StatusEffect>
+			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true"/>
+		</RangedWeapon>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+			<Containable items="556beltammo" hide="false" itempos="-5,-7.5"/>
+			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5"/>
+			<SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
+				<Containable items="flashlight" hide="false" itempos="25,1" setactive="true"/>
+			</SubContainer>
+		</ItemContainer>
+		<aitarget sightrange="2000" soundrange="4000" fadeouttime="5"/>
+		<Quality>
+			<QualityStat stattype="FirepowerMultiplier" value="0.07"/>
+			<QualityStat stattype="Condition" value="0.2"/>
+		</Quality>
+		<SkillRequirementHint identifier="weapons" level="80"/>
+	</Item>
+	<!--M249-->
+	<Item name="" description="" identifier="saw" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_weaponcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.16" impactsoundtag="weaponheavydrop">
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.04" minleveldifficulty="15"/>
+		<PreferredContainer secondary="weaponholder"/>
+		<Price baseprice="2500" displaynonempty="true" minleveldifficulty="25">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="1" maxavailable="1">
+				<Reputation faction="coalition" min="60"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="0" maxavailable="1">
+				<Reputation faction="coalition" min="60"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="weaponfabricator" requiredtime="35">
+			<RequiredSkill identifier="weapons" level="50"/>
+			<RequiredItem identifier="scp_riflekit" amount="2"/>
+			<RequiredItem identifier="steel" amount="2"/>
+			<RequiredItem identifier="titaniumaluminiumalloy" amount="1"/>
+		</Fabricate>
+		<Deconstruct time="35">
+			<Item identifier="steel" amount="2"/>
+			<Item identifier="titaniumaluminiumalloyl"/>
+			<Item identifier="plastic"/>
+		</Deconstruct>
+		<InventoryIcon texture="%ModDir%/Weapons/clmginv.png" sourcerect="0,0,559,612" origin="0.5,0.5"/>
+		<Sprite texture="%ModDir%/Weapons/clmg.png" sourcerect="0,0,782,248" depth="0.55" origin="0.5,0.5"/>
+		<Body width="140" height="120" density="50"/>
+		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="44,-10" aimpos="57,3" handle1="-140,-45" handle2="300,10" holdangle="-20" msg="ItemMsgPickUpSelect"/>
+		<RangedWeapon reload="0.1" reloadnoskill="0.25" reloadskillrequirement="80" barrelpos="400,20" spread="1.5" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256"/>
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256"/>
+			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1,1" colormultiplier="255,200,200,200"/>
+			<Sound file="%ModDir%/Sounds/g3.ogg" type="OnUse" range="3000" selectionmode="Random"/>
+			<Sound file="%ModDir%/Sounds/g3.ogg" type="OnUse" range="3000" frequencymultiplier="1.025"/>
+			<Sound file="%ModDir%/Sounds/g3.ogg" type="OnUse" range="3000" frequencymultiplier="0.96"/>
+			<StatusEffect type="OnUse" target="This" Condition="-140"/>
+			<StatusEffect type="Always" target="This" Condition="8">
+				<Conditional condition="gt 0"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" delay="0.5">
+				<sound file="%ModDir%/Sounds/machinegunjam.ogg" type="OnUse" range="900.0" loop="false" volume="1.2"/>
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This" Condition="55" disabledeltatime="true" delay="10" stackable="false"/>
+			<StatusEffect type="OnUse">
+				<Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="26"/>
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="Contained">
+				<Use/>
+			</StatusEffect>
+			<RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="556beltammo" />
+			<RequiredSkill identifier="weapons" level="60"/>
+			<StatusEffect type="OnUse" target="This" comparison="and">
+				<Conditional condition="lt 35"/>
+				<ParticleEmitter particle="steamspray" particleamount="1" velocitymin="5" velocitymax="10" scalemin="1.5" scalemax="2.5" anglemin="0" anglemax="360" colormultiplier="15,15,15,255"/>
+				<ParticleEmitter particle="weldspark" particleamount="7" velocitymin="2000" velocitymax="3000" scalemin="0.8" scalemax="1" anglemin="-20" anglemax="20" copyentityangle="true" colormultiplier="255,200,200,225"/>
+			</StatusEffect>
+			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true"/>
+		</RangedWeapon>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+			<Containable items="556beltammo" hide="false" itempos="-5,-5.5"/>
+			<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5"/>
+			<SubContainer capacity="1" maxstacksize="1" containedspritedepth="0.5">
+				<Containable items="flashlight" hide="false" itempos="25,1" setactive="true"/>
+			</SubContainer>
+		</ItemContainer>
+		<aitarget sightrange="2000" soundrange="4000" fadeouttime="5"/>
+		<Quality>
+			<QualityStat stattype="FirepowerMultiplier" value="0.07"/>
+			<QualityStat stattype="Condition" value="0.2"/>
+		</Quality>
+		<SkillRequirementHint identifier="weapons" level="80"/>
+	</Item>
+	<!--200 Round 5.56x51 belt bag-->
+	<Item name="" identifier="556bigbeltbag" description="" tags="smallitem,556beltammo,ehaammo,556belt" maxstacksize="4" maxstacksizecharacterinventory="2" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_ammocrate" impactsoundtag="impact_metal_light" scale="0.3">
+		<PreferredContainer primary="saw,ssaw" minamount="0" maxamount="1" spawnprobability="0.5"/>
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
+		<Price baseprice="800" displaynonempty="true" minleveldifficulty="10">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="50"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="50"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="10" amount="2">
+			<RequiredSkill identifier="weapons" level="50"/>
+			<RequiredItem identifier="steel" amount="4"/>
+			<RequiredItem identifier="flashpowder" amount="2"/>
+			<RequiredItem identifier="titanium" amount="1"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Fabricate suitablefabricators="reloadfabricator" displayname="recycleitem" requiredtime="10" amount="2">
+			<RequiredSkill identifier="weapons" level="40"/>
+			<RequiredItem tag="556belt" mincondition="0.0" maxcondition="0.99" usecondition="false" />
+			<RequiredItem identifier="steel" amount="4"/>
+			<RequiredItem identifier="flashpowder" amount="2"/>
+			<RequiredItem identifier="titanium" amount="1"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Deconstruct time="15">
+			<Item identifier="steel"/>
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" depth="0.54" sourcerect="165,0,32,68" origin="0.5,0.24"/>
+		<Body width="30" height="40" density="50"/>
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="scp_556projectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="scp_556projectile"/>
+			<StatusEffect type="OnUse" target="This" condition="-0.5" disabledeltatime="true">
+				<SpawnItem identifier="scp_556projectile" spawnposition="ThisInventory"/>
+				<ParticleEmitter particle="scp_spentcasingriflemed" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.35" scalemax="0.35"/>
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+	</Item>
+	<!--100 Round 5.56x51 belt bag-->
+	<Item name="" identifier="556smallbeltbag" description="" tags="smallitem,556beltammo,ehaammo,556belt" maxstacksize="4" maxstacksizecharacterinventory="2" category="Weapon" subcategory="Coalition" cargocontaineridentifier="scp_ammocrate" impactsoundtag="impact_metal_light" scale="0.3">
+		<PreferredContainer primary="saw,ssaw" minamount="0" maxamount="1" spawnprobability="0.5"/>
+		<PreferredContainer primary="secarmcab"/>
+		<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.05" minleveldifficulty="15"/>
+		<Price baseprice="600" displaynonempty="true" minleveldifficulty="10">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5"/>
+			<Price storeidentifier="merchantcity" multiplier="1.25" sold="false"/>
+			<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantmilitary" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="50"/>
+			</Price>
+			<Price storeidentifier="merchantmine" sold="false" multiplier="1.25"/>
+			<Price storeidentifier="merchantarmory" multiplier="0.95" minavailable="2" maxavailable="6">
+				<Reputation faction="coalition" min="50"/>
+			</Price>
+		</Price>
+		<Fabricate suitablefabricators="ammofabricator" requiredtime="10" amount="2">
+			<RequiredSkill identifier="weapons" level="50"/>
+			<RequiredItem identifier="steel" amount="1"/>
+			<RequiredItem identifier="flashpowder" amount="1"/>
+			<RequiredItem identifier="titanium" amount="1"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Fabricate suitablefabricators="reloadfabricator" displayname="recycleitem" requiredtime="15" amount="2">
+			<RequiredSkill identifier="weapons" level="40"/>
+			<RequiredItem tag="556belt" mincondition="0.0" maxcondition="0.99" usecondition="false" />
+			<RequiredItem identifier="steel" amount="1"/>
+			<RequiredItem identifier="flashpowder" amount="1"/>
+			<RequiredItem identifier="titanium" amount="1"/>
+			<RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+		</Fabricate>
+		<Deconstruct time="15">
+			<Item identifier="steel"/>
+		</Deconstruct>
+		<Sprite texture="%ModDir%/Ammo/improvedammo1.png" depth="0.54" sourcerect="210,0,32,38" origin="0.5,0.5"/>
+		<Body width="30" height="40" density="50"/>
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="scp_556projectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="scp_556projectile"/>
+			<StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+				<SpawnItem identifier="scp_556projectile" spawnposition="ThisInventory"/>
+				<ParticleEmitter particle="scp_spentcasingriflemed" particleamount="1" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.35" scalemax="0.35"/>
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+	</Item>
+</Items>
+</Override>

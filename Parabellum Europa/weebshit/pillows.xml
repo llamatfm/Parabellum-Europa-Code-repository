@@ -1,0 +1,56 @@
+<Override>
+<Items>
+ <Item name="" identifier="tingyun" category="Generic" tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.15" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="1">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="engcab"/>
+    <Sprite texture="%ModDir%/weebshit/tingyun.png" sourcerect="0,0,411,1321" depth="0.8" origin="0.5,0.5" />
+	<BrokenSprite texture="%ModDir%/weebshit/tingyun.png" sourcerect="586,0,415,1321" depth="0.8" origin="0.5,0.5" maxcondition="50" />
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="organicfiber" />
+    </Fabricate>
+    <Body width="36" height="40" density="20" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <sound file="%ModDir%/Sounds/tingyun.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
+    </Holdable>
+	<CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.09,0.07" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.025,0.093" style="ItemUI" />
+      <TickBox text="Reverse">
+        <StatusEffect type="OnUse" target="This" Condition="-99"  />
+      </TickBox>
+	  <StatusEffect type="OnBroken" target="This" Condition="100" disabledeltatime="true" stackable="false"/>
+    </CustomInterface>
+  </Item>
+  <Item name="" identifier="xilonen" category="Generic" tags="smallitem" cargocontaineridentifier="metalcrate" scale="0.19" impactsoundtag="impact_metal_light" isshootable="true" maxstacksize="1">
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <PreferredContainer primary="engcab"/>
+    <Sprite texture="%ModDir%/weebshit/xilonen.png" sourcerect="0,0,369,1101" depth="0.8" origin="0.5,0.5" />
+	<BrokenSprite texture="%ModDir%/weebshit/xilonen.png" sourcerect="375,0,369,1191" depth="0.8" origin="0.5,0.5" maxcondition="50" />
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredItem identifier="organicfiber" />
+    </Fabricate>
+    <Body width="36" height="40" density="20" />
+    <Controller direction="None" canbepicked="true" msg="ItemMsgPressSelect">
+      <sound file="%ModDir%/Sounds/xilonen.ogg" type="OnUse" range="500.0" />
+    </Controller>
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
+    </Holdable>
+	<CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+      <GuiFrame relativesize="0.09,0.07" anchor="BottomCenter" pivot="BottomRight" relativeoffset="-0.025,0.093" style="ItemUI" />
+      <TickBox text="Reverse">
+        <StatusEffect type="OnUse" target="This" Condition="-95"  />
+      </TickBox>
+	  <StatusEffect type="OnBroken" target="This" Condition="100" disabledeltatime="true" stackable="false"/>
+    </CustomInterface>
+ </Item>
+</Items>
+</Override>
